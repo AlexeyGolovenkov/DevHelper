@@ -1,7 +1,6 @@
-language: objective-c
+language: swift
 osx_image: xcode8.2
 
 script:
-- cd DevHelper 
-- xctool clean build -project DevHelper.xcodeproj -scheme DevHelper
-- xctool test -project DevHelper.xcodeproj -scheme DevHelper
+- set -o pipefail
+- travis_retry xcodebuild -workspace "DevHelper.xcodeproj" -scheme "DevHelper" build-for-testing test | xcpretty
