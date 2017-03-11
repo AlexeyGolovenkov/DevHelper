@@ -1,7 +1,0 @@
-language: swift
-osx_image: xcode8.2
-
-script:
-- cd DevHelper
-- set -o pipefail
-- travis_retry xcodebuild -project "DevHelper.xcodeproj" -scheme "DevHelper" build-for-testing test | xcpretty
