@@ -1,0 +1,38 @@
+//
+//  AccountDetailsViewController.m
+//  Econom
+//
+//  Created by Alexey Golovenkov on 04/09/14.
+//
+
+#import <Foundation/Foundation.h>
+#import "AccountDetailsViewController.h"
+#import "Account.h"
+#import <UIKit/UIKit.h>
+#import "Account.h"
+#import "DataBaseManager.h"
+#import "AccountDetailsViewController.h"
+
+@interface AccountDetailsViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *titleField;
+@property (weak, nonatomic) IBOutlet UITextField *addressField;
+@property (weak, nonatomic) IBOutlet UITextView *notesView;
+
+@end
+
+@implementation AccountDetailsViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [self makeRoundCornersForView:self.notesView];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+@end
