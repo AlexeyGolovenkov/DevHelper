@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		274CBA371E746D4900D20B52 /* SortAndUniqCorrected.test in Resources */ = {isa = PBXBuildFile; fileRef = 274CBA351E746D4900D20B52 /* SortAndUniqCorrected.test */; };
 		274CBA381E746D4900D20B52 /* SortAndUniqSource.test in Resources */ = {isa = PBXBuildFile; fileRef = 274CBA361E746D4900D20B52 /* SortAndUniqSource.test */; };
+		274CBA3B1E7584CD00D20B52 /* DHTextRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274CBA3A1E7584CD00D20B52 /* DHTextRangeTests.swift */; };
+		274CBA3D1E75861200D20B52 /* DHTextRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274CBA3C1E75861200D20B52 /* DHTextRange.swift */; };
+		274CBA3E1E75861200D20B52 /* DHTextRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274CBA3C1E75861200D20B52 /* DHTextRange.swift */; };
 		275EB3CC1E73E9DC00CCAF22 /* String+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EB3CB1E73E9DC00CCAF22 /* String+Test.swift */; };
 		275EB3DA1E73F68700CCAF22 /* NSMutableArray+DevHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EB3D91E73F68700CCAF22 /* NSMutableArray+DevHelper.swift */; };
 		275EB3DB1E73F68700CCAF22 /* NSMutableArray+DevHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EB3D91E73F68700CCAF22 /* NSMutableArray+DevHelper.swift */; };
@@ -60,6 +63,8 @@
 /* Begin PBXFileReference section */
 		274CBA351E746D4900D20B52 /* SortAndUniqCorrected.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SortAndUniqCorrected.test; sourceTree = "<group>"; };
 		274CBA361E746D4900D20B52 /* SortAndUniqSource.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SortAndUniqSource.test; sourceTree = "<group>"; };
+		274CBA3A1E7584CD00D20B52 /* DHTextRangeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTextRangeTests.swift; sourceTree = "<group>"; };
+		274CBA3C1E75861200D20B52 /* DHTextRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTextRange.swift; sourceTree = "<group>"; };
 		275EB3CB1E73E9DC00CCAF22 /* String+Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Test.swift"; sourceTree = "<group>"; };
 		275EB3CF1E73F24000CCAF22 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 		275EB3D91E73F68700CCAF22 /* NSMutableArray+DevHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableArray+DevHelper.swift"; sourceTree = "<group>"; };
@@ -125,6 +130,7 @@
 			children = (
 				275EB3D91E73F68700CCAF22 /* NSMutableArray+DevHelper.swift */,
 				275EB3DC1E73F83700CCAF22 /* DHTextRange+XCodeExtensionOnly.swift */,
+				274CBA3C1E75861200D20B52 /* DHTextRange.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -167,6 +173,7 @@
 			children = (
 				275EB3C51E73E82D00CCAF22 /* TestData */,
 				278A796B1E7340AD008179F9 /* SortCommandTests.swift */,
+				274CBA3A1E7584CD00D20B52 /* DHTextRangeTests.swift */,
 				278A796D1E7340AD008179F9 /* Info.plist */,
 				275EB3CB1E73E9DC00CCAF22 /* String+Test.swift */,
 			);
@@ -353,7 +360,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				275EB3DA1E73F68700CCAF22 /* NSMutableArray+DevHelper.swift in Sources */,
+				274CBA3D1E75861200D20B52 /* DHTextRange.swift in Sources */,
 				275EB3CC1E73E9DC00CCAF22 /* String+Test.swift in Sources */,
+				274CBA3B1E7584CD00D20B52 /* DHTextRangeTests.swift in Sources */,
 				275EB3DE1E73FE4900CCAF22 /* SortCommandTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				275EB3DD1E73F83700CCAF22 /* DHTextRange+XCodeExtensionOnly.swift in Sources */,
+				274CBA3E1E75861200D20B52 /* DHTextRange.swift in Sources */,
 				275EB3DB1E73F68700CCAF22 /* NSMutableArray+DevHelper.swift in Sources */,
 				278A79821E7340E9008179F9 /* SourceEditorExtension.swift in Sources */,
 				278A79841E7340E9008179F9 /* SortCommand.swift in Sources */,

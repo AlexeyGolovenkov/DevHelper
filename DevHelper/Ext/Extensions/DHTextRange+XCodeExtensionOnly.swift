@@ -15,4 +15,10 @@ extension DHTextRange {
 		self.start = DHTextPosition(line: textRange.start.line, column: textRange.start.column)
 		self.end = DHTextPosition(line: textRange.end.line, column: textRange.end.column)
 	}
+	
+	override var debugDescription: String {
+		get {
+			return "DHTextRange. Start: line - \(self.start.line), column - \(self.start.column). End: line - \(self.end.line), column - \(self.end.column)."
+		}
+	}
 }

@@ -8,16 +8,6 @@
 
 import Foundation
 
-struct DHTextPosition {
-	var line = 0
-	var column = 0
-}
-
-class DHTextRange: NSObject {
-	var start = DHTextPosition(line: 0, column: 0)
-	var end = DHTextPosition(line: 0, column: 0)
-}
-
 extension NSMutableArray {
 	func sort(range: DHTextRange) {
 		if range.start.line == range.end.line {
