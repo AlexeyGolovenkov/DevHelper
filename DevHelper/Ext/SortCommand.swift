@@ -15,7 +15,9 @@ class SortCommand: NSObject, XCSourceEditorCommand {
     
 	func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
 		for selection in invocation.buffer.selections {
-			let range = DHTextRange(textRange: selection as! XCSourceTextRange)
+			guard let range = DHTextRange(textRange: selection as? XCSourceTextRange) else {
+				continue
+			}
 			invocation.buffer.lines.sort(range: range)
 		}
 		

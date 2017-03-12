@@ -36,6 +36,14 @@
 					<key>XCSourceEditorCommandName</key>
 					<string>Sort and Uniq</string>
 				</dict>
+				<dict>
+					<key>XCSourceEditorCommandClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).CopyWordAboveCommand</string>
+					<key>XCSourceEditorCommandIdentifier</key>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).CopyWordAboveCommand</string>
+					<key>XCSourceEditorCommandName</key>
+					<string>Copy word above</string>
+				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
 			<string>$(PRODUCT_MODULE_NAME).SourceEditorExtension</string>

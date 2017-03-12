@@ -48,4 +48,66 @@ extension NSMutableArray {
 			}
 		}
 	}
+	func copyWordFromLineAbove(position: DHTextPosition) -> DHTextPosition {
+		guard position.line > 0 && position.line < self.count && position.column >= 0 else {
+			return position
+		}
+		guard let sourceLine = (self[position.line - 1] as? String) else {
+			return position
+		}
+		guard position.column < sourceLine.characters.count - 1 else {
+			return position
+		}
+		guard var updatingLine = (self[position.line] as? String) else {
+			return position
+		}
+		
+		let startIndex = sourceLine.startIndex
+		let changingIndex = sourceLine.index(startIndex, offsetBy: position.column)
+		var char = String(sourceLine[changingIndex]).unicodeScalars
+		
+		var lineToBeInserted = String(sourceLine[changingIndex])
+		let lineLength = sourceLine.characters.count - 1
+		var index = position.column + 1
+		
+		if CharacterSet.alphanumerics.contains(char[char.startIndex]) {
+			while index < lineLength {
+				let lineIndex = sourceLine.index(startIndex, offsetBy: index)
+				char = String(sourceLine[lineIndex]).unicodeScalars
+				guard CharacterSet.alphanumerics.contains(char[char.startIndex]) else {
+					break
+				}
+				lineToBeInserted.append(sourceLine[lineIndex])
+				index += 1
+			}
+			
+		} else {
+			while index < lineLength {
+				let lineIndex = sourceLine.index(startIndex, offsetBy: index)
+				char = String(sourceLine[lineIndex]).unicodeScalars
+				guard !CharacterSet.alphanumerics.contains(char[char.startIndex]) else {
+					break
+				}
+				lineToBeInserted.append(sourceLine[lineIndex])
+				index += 1
+			}
+		}
+		
+		
+		
+//		var stringToBeInserted = sourceLine.substring(from: changingIndex)
+//		if let i = stringToBeInserted.characters.index(of: "\n") {
+//			stringToBeInserted.remove(at: i)
+//		}
+		
+		let changingStringStartIndex = updatingLine.startIndex
+		let changingStringChangingIndex = updatingLine.index(changingStringStartIndex, offsetBy: position.column)
+		let prefix = updatingLine.substring(to: changingStringChangingIndex)
+		let suffix = updatingLine.substring(from: changingStringChangingIndex)
+		
+		updatingLine = "\(prefix)\(lineToBeInserted)\(suffix)"
+		self[position.line] = updatingLine
+		
+		return DHTextPosition(line: position.line, column: position.column + lineToBeInserted.characters.count)
+	}
 }

@@ -10,7 +10,10 @@ import Foundation
 import XcodeKit
 
 extension DHTextRange {
-	convenience init(textRange: XCSourceTextRange) {
+	convenience init?(textRange: XCSourceTextRange?) {
+		guard let textRange = textRange else {
+			return nil
+		}
 		self.init()
 		self.start = DHTextPosition(line: textRange.start.line, column: textRange.start.column)
 		self.end = DHTextPosition(line: textRange.end.line, column: textRange.end.column)

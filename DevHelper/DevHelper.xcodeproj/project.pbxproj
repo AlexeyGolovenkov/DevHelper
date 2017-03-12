@@ -12,6 +12,7 @@
 		274CBA3B1E7584CD00D20B52 /* DHTextRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274CBA3A1E7584CD00D20B52 /* DHTextRangeTests.swift */; };
 		274CBA3D1E75861200D20B52 /* DHTextRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274CBA3C1E75861200D20B52 /* DHTextRange.swift */; };
 		274CBA3E1E75861200D20B52 /* DHTextRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274CBA3C1E75861200D20B52 /* DHTextRange.swift */; };
+		274CBA411E758B5400D20B52 /* CopyWordAboveCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274CBA3F1E758B5400D20B52 /* CopyWordAboveCommand.swift */; };
 		275EB3CC1E73E9DC00CCAF22 /* String+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EB3CB1E73E9DC00CCAF22 /* String+Test.swift */; };
 		275EB3DA1E73F68700CCAF22 /* NSMutableArray+DevHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EB3D91E73F68700CCAF22 /* NSMutableArray+DevHelper.swift */; };
 		275EB3DB1E73F68700CCAF22 /* NSMutableArray+DevHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EB3D91E73F68700CCAF22 /* NSMutableArray+DevHelper.swift */; };
@@ -65,6 +66,7 @@
 		274CBA361E746D4900D20B52 /* SortAndUniqSource.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SortAndUniqSource.test; sourceTree = "<group>"; };
 		274CBA3A1E7584CD00D20B52 /* DHTextRangeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTextRangeTests.swift; sourceTree = "<group>"; };
 		274CBA3C1E75861200D20B52 /* DHTextRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTextRange.swift; sourceTree = "<group>"; };
+		274CBA3F1E758B5400D20B52 /* CopyWordAboveCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopyWordAboveCommand.swift; sourceTree = "<group>"; };
 		275EB3CB1E73E9DC00CCAF22 /* String+Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Test.swift"; sourceTree = "<group>"; };
 		275EB3CF1E73F24000CCAF22 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 		275EB3D91E73F68700CCAF22 /* NSMutableArray+DevHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableArray+DevHelper.swift"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				275EB3D81E73F68700CCAF22 /* Extensions */,
 				278A79811E7340E9008179F9 /* SourceEditorExtension.swift */,
 				278A79831E7340E9008179F9 /* SortCommand.swift */,
+				274CBA3F1E758B5400D20B52 /* CopyWordAboveCommand.swift */,
 				278A79851E7340E9008179F9 /* Info.plist */,
 				278A797F1E7340E9008179F9 /* Supporting Files */,
 			);
@@ -371,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274CBA411E758B5400D20B52 /* CopyWordAboveCommand.swift in Sources */,
 				275EB3DD1E73F83700CCAF22 /* DHTextRange+XCodeExtensionOnly.swift in Sources */,
 				274CBA3E1E75861200D20B52 /* DHTextRange.swift in Sources */,
 				275EB3DB1E73F68700CCAF22 /* NSMutableArray+DevHelper.swift in Sources */,
