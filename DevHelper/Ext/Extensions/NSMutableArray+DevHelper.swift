@@ -93,13 +93,6 @@ extension NSMutableArray {
 			}
 		}
 		
-		
-		
-//		var stringToBeInserted = sourceLine.substring(from: changingIndex)
-//		if let i = stringToBeInserted.characters.index(of: "\n") {
-//			stringToBeInserted.remove(at: i)
-//		}
-		
 		let changingStringStartIndex = updatingLine.startIndex
 		let changingStringChangingIndex = updatingLine.index(changingStringStartIndex, offsetBy: position.column)
 		let prefix = updatingLine.substring(to: changingStringChangingIndex)
