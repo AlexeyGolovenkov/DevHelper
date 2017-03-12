@@ -48,6 +48,7 @@ extension NSMutableArray {
 			}
 		}
 	}
+	
 	func copyLineAbove(position: DHTextPosition) -> DHTextPosition {
 		guard position.line > 0 && position.line < self.count && position.column >= 0 else {
 			return position
@@ -76,5 +77,33 @@ extension NSMutableArray {
 		self[position.line] = updatingLine
 		
 		return DHTextPosition(line: position.line, column: position.column + lineToBeInserted.characters.count)
+	}
+	
+	func comment(range: DHTextRange) -> DHTextRange {
+		guard var endLine = self[range.end.line] as? String else {
+			return range
+		}
+		let endLineIndex = endLine.index(endLine.startIndex, offsetBy: range.end.column)
+		endLine.insert("/", at: endLineIndex)
+		endLine.insert("*", at: endLineIndex)
+		self[range.end.line] = endLine
+		
+		guard var firstLine = self[range.start.line] as? String else {
+			return range
+		}
+		let firstLineIndex = firstLine.index(firstLine.startIndex, offsetBy: range.start.column)
+		firstLine.insert("*", at: firstLineIndex)
+		firstLine.insert("/", at: firstLineIndex)
+		self[range.start.line] = firstLine
+		
+		if range.isCursorPosition() {
+			range.end.column += 2
+			range.start.column += 2
+			return range
+		}
+		
+		let offset = range.start.line == range.end.line ? 4 : 2
+		range.end.column += offset
+		return range
 	}
 }
