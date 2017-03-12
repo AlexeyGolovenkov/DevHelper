@@ -38,11 +38,11 @@
 				</dict>
 				<dict>
 					<key>XCSourceEditorCommandClassName</key>
-					<string>$(PRODUCT_MODULE_NAME).CopyWordAboveCommand</string>
+					<string>$(PRODUCT_MODULE_NAME).CopyLineAboveCommand</string>
 					<key>XCSourceEditorCommandIdentifier</key>
-					<string>$(PRODUCT_BUNDLE_IDENTIFIER).CopyWordAboveCommand</string>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).CopyLineAboveCommand</string>
 					<key>XCSourceEditorCommandName</key>
-					<string>Copy word above</string>
+					<string>Copy line above</string>
 				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>

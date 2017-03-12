@@ -48,7 +48,7 @@ extension NSMutableArray {
 			}
 		}
 	}
-	func copyWordFromLineAbove(position: DHTextPosition) -> DHTextPosition {
+	func copyLineAbove(position: DHTextPosition) -> DHTextPosition {
 		guard position.line > 0 && position.line < self.count && position.column >= 0 else {
 			return position
 		}
@@ -64,34 +64,8 @@ extension NSMutableArray {
 		
 		let startIndex = sourceLine.startIndex
 		let changingIndex = sourceLine.index(startIndex, offsetBy: position.column)
-		var char = String(sourceLine[changingIndex]).unicodeScalars
-		
-		var lineToBeInserted = String(sourceLine[changingIndex])
-		let lineLength = sourceLine.characters.count - 1
-		var index = position.column + 1
-		
-		if CharacterSet.alphanumerics.contains(char[char.startIndex]) {
-			while index < lineLength {
-				let lineIndex = sourceLine.index(startIndex, offsetBy: index)
-				char = String(sourceLine[lineIndex]).unicodeScalars
-				guard CharacterSet.alphanumerics.contains(char[char.startIndex]) else {
-					break
-				}
-				lineToBeInserted.append(sourceLine[lineIndex])
-				index += 1
-			}
-			
-		} else {
-			while index < lineLength {
-				let lineIndex = sourceLine.index(startIndex, offsetBy: index)
-				char = String(sourceLine[lineIndex]).unicodeScalars
-				guard !CharacterSet.alphanumerics.contains(char[char.startIndex]) else {
-					break
-				}
-				lineToBeInserted.append(sourceLine[lineIndex])
-				index += 1
-			}
-		}
+		var lineToBeInserted = sourceLine.substring(from: changingIndex)
+		lineToBeInserted = lineToBeInserted.substring(to: lineToBeInserted.index(before: lineToBeInserted.endIndex))
 		
 		let changingStringStartIndex = updatingLine.startIndex
 		let changingStringChangingIndex = updatingLine.index(changingStringStartIndex, offsetBy: position.column)

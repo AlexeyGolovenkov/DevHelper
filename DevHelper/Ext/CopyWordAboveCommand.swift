@@ -9,7 +9,7 @@
 import Cocoa
 import XcodeKit
 
-class CopyWordAboveCommand: NSObject, XCSourceEditorCommand {
+class CopyLineAboveCommand: NSObject, XCSourceEditorCommand {
 	func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
 		for selection in invocation.buffer.selections {
 			guard let range = DHTextRange(textRange: selection as? XCSourceTextRange) else {
@@ -18,7 +18,7 @@ class CopyWordAboveCommand: NSObject, XCSourceEditorCommand {
 			guard range.isCursorPosition() else {
 				continue
 			}
-			let newPosition = invocation.buffer.lines.copyWordFromLineAbove(position: range.start)
+			let newPosition = invocation.buffer.lines.copyLineAbove(position: range.start)
 			let position = selection as! XCSourceTextRange
 			position.start.column = newPosition.column
 			position.start.line = newPosition.line
