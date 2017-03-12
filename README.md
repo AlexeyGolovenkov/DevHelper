@@ -31,5 +31,9 @@ After
 #import "PortalManager.h"
 #import <Foundation/Foundation.h>
 ```
+
 ### Copy Line Above
 Copies a previous line to current cursor position. Coping is started from the column where cursor is placed. Useful for number of similar lines of code. Good example - parsing of JSON or NSCoding protocol implementing
+
+### Comment out
+Add /\* before and \*/ after selected text. Selection is extended by inserted symbols. If selection is empty, just adds symbols at cursor position and move the cursor between.
