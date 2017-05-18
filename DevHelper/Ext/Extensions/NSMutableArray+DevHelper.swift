@@ -50,6 +50,9 @@ extension NSMutableArray {
 	}
 	
 	func copyLineAbove(position: DHTextPosition) -> DHTextPosition {
+		if position.line == self.count {
+			self.add("")
+		}
 		guard position.line > 0 && position.line < self.count && position.column >= 0 else {
 			return position
 		}
