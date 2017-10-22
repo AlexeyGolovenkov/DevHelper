@@ -68,15 +68,16 @@ extension NSMutableArray {
 		
 		let startIndex = sourceLine.startIndex
 		let changingIndex = sourceLine.index(startIndex, offsetBy: position.column)
-		var lineToBeInserted = sourceLine.substring(from: changingIndex)
-		lineToBeInserted = lineToBeInserted.substring(to: lineToBeInserted.index(before: lineToBeInserted.endIndex))
+		var substringToBeInserted = sourceLine[changingIndex...]
+		substringToBeInserted = substringToBeInserted[..<substringToBeInserted.index(before: substringToBeInserted.endIndex)]
 		
 		let changingStringStartIndex = updatingLine.startIndex
 		let changingStringChangingIndex = updatingLine.index(changingStringStartIndex, offsetBy: position.column)
-		let prefix = updatingLine.substring(to: changingStringChangingIndex)
-		let suffix = updatingLine.substring(from: changingStringChangingIndex)
+		let prefix = updatingLine[..<changingStringChangingIndex]
+		let suffix = updatingLine[changingStringChangingIndex...]
 		
-		updatingLine = "\(prefix)\(lineToBeInserted)\(suffix)"
+		let lineToBeInserted = String(substringToBeInserted)
+		updatingLine = "\(String(prefix))\(lineToBeInserted)\(String(suffix))"
 		self[position.line] = updatingLine
 		
 		return DHTextPosition(line: position.line, column: position.column + lineToBeInserted.characters.count)
