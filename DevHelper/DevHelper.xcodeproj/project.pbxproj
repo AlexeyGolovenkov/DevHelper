@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270204DB1F9C7E840002A955 /* CopyLineCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270204D91F9C7E790002A955 /* CopyLineCommand.swift */; };
 		274CBA371E746D4900D20B52 /* SortAndUniqCorrected.test in Resources */ = {isa = PBXBuildFile; fileRef = 274CBA351E746D4900D20B52 /* SortAndUniqCorrected.test */; };
 		274CBA381E746D4900D20B52 /* SortAndUniqSource.test in Resources */ = {isa = PBXBuildFile; fileRef = 274CBA361E746D4900D20B52 /* SortAndUniqSource.test */; };
 		274CBA3B1E7584CD00D20B52 /* DHTextRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274CBA3A1E7584CD00D20B52 /* DHTextRangeTests.swift */; };
@@ -29,6 +30,9 @@
 		278A797D1E7340E9008179F9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278A797C1E7340E9008179F9 /* Cocoa.framework */; };
 		278A79821E7340E9008179F9 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278A79811E7340E9008179F9 /* SourceEditorExtension.swift */; };
 		278A79841E7340E9008179F9 /* SortCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278A79831E7340E9008179F9 /* SortCommand.swift */; };
+		278DEEE71F9C84D200AE030F /* CopyLine.test in Resources */ = {isa = PBXBuildFile; fileRef = 278DEEE61F9C84D200AE030F /* CopyLine.test */; };
+		278DEEEA1F9C851D00AE030F /* CopyLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DEEE91F9C851D00AE030F /* CopyLineTests.swift */; };
+		278DEEEB1F9C8C9700AE030F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 278A79851E7340E9008179F9 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		270204D91F9C7E790002A955 /* CopyLineCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopyLineCommand.swift; sourceTree = "<group>"; };
 		274CBA351E746D4900D20B52 /* SortAndUniqCorrected.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SortAndUniqCorrected.test; sourceTree = "<group>"; };
 		274CBA361E746D4900D20B52 /* SortAndUniqSource.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SortAndUniqSource.test; sourceTree = "<group>"; };
 		274CBA3A1E7584CD00D20B52 /* DHTextRangeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTextRangeTests.swift; sourceTree = "<group>"; };
@@ -90,6 +95,8 @@
 		278A79811E7340E9008179F9 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
 		278A79831E7340E9008179F9 /* SortCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCommand.swift; sourceTree = "<group>"; };
 		278A79851E7340E9008179F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		278DEEE61F9C84D200AE030F /* CopyLine.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CopyLine.test; sourceTree = "<group>"; };
+		278DEEE91F9C851D00AE030F /* CopyLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyLineTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +128,7 @@
 		275EB3C51E73E82D00CCAF22 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
+				278DEEE61F9C84D200AE030F /* CopyLine.test */,
 				274CBA351E746D4900D20B52 /* SortAndUniqCorrected.test */,
 				274CBA361E746D4900D20B52 /* SortAndUniqSource.test */,
 				275EB3E41E74008600CCAF22 /* SingleSortCorrected.test */,
@@ -178,6 +186,7 @@
 				275EB3C51E73E82D00CCAF22 /* TestData */,
 				278A796B1E7340AD008179F9 /* SortCommandTests.swift */,
 				274CBA3A1E7584CD00D20B52 /* DHTextRangeTests.swift */,
+				278DEEE91F9C851D00AE030F /* CopyLineTests.swift */,
 				278A796D1E7340AD008179F9 /* Info.plist */,
 				275EB3CB1E73E9DC00CCAF22 /* String+Test.swift */,
 			);
@@ -200,6 +209,7 @@
 				278A79811E7340E9008179F9 /* SourceEditorExtension.swift */,
 				278A79831E7340E9008179F9 /* SortCommand.swift */,
 				274CBA421E75D4C200D20B52 /* CommentCommand.swift */,
+				270204D91F9C7E790002A955 /* CopyLineCommand.swift */,
 				274CBA3F1E758B5400D20B52 /* CopyWordAboveCommand.swift */,
 				278A79851E7340E9008179F9 /* Info.plist */,
 				278A797F1E7340E9008179F9 /* Supporting Files */,
@@ -341,6 +351,7 @@
 				274CBA381E746D4900D20B52 /* SortAndUniqSource.test in Resources */,
 				274CBA371E746D4900D20B52 /* SortAndUniqCorrected.test in Resources */,
 				275EB3E71E74008600CCAF22 /* SingleSortSource.test in Resources */,
+				278DEEE71F9C84D200AE030F /* CopyLine.test in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278DEEEB1F9C8C9700AE030F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278DEEEA1F9C851D00AE030F /* CopyLineTests.swift in Sources */,
 				275EB3DA1E73F68700CCAF22 /* NSMutableArray+DevHelper.swift in Sources */,
 				274CBA3D1E75861200D20B52 /* DHTextRange.swift in Sources */,
 				275EB3CC1E73E9DC00CCAF22 /* String+Test.swift in Sources */,
@@ -381,6 +394,7 @@
 			files = (
 				274CBA411E758B5400D20B52 /* CopyWordAboveCommand.swift in Sources */,
 				275EB3DD1E73F83700CCAF22 /* DHTextRange+XCodeExtensionOnly.swift in Sources */,
+				270204DB1F9C7E840002A955 /* CopyLineCommand.swift in Sources */,
 				274CBA431E75D4C200D20B52 /* CommentCommand.swift in Sources */,
 				274CBA3E1E75861200D20B52 /* DHTextRange.swift in Sources */,
 				275EB3DB1E73F68700CCAF22 /* NSMutableArray+DevHelper.swift in Sources */,
@@ -558,12 +572,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VKPEBSVB5E;
 				INFOPLIST_FILE = DevHelperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.agsoft.DevHelperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -577,12 +594,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VKPEBSVB5E;
 				INFOPLIST_FILE = DevHelperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.agsoft.DevHelperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevHelperContainer.app/Contents/MacOS/DevHelperContainer";

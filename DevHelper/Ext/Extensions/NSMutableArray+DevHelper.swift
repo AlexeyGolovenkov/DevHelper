@@ -110,4 +110,15 @@ extension NSMutableArray {
 		range.end.column += offset
 		return range
 	}
+	
+	func wholeLines(range: DHTextRange) -> String {
+		var string = ""
+		for lineIndex in range.start.line ... range.end.line {
+			guard let line = self[lineIndex] as? String else {
+				continue
+			}
+			string.append(line)
+		}
+		return string
+	}
 }
