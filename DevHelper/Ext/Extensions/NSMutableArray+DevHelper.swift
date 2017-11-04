@@ -9,6 +9,22 @@
 import Foundation
 
 extension NSMutableArray {
+	fileprivate func removeDoubledLines(from dirtyLines: [String]) -> [String] {
+		var lines = dirtyLines
+		var lineIndex = 1
+		var line = lines.first!
+		while lineIndex < lines.count {
+			let currentLine = lines[lineIndex]
+			if currentLine == line {
+				lines.remove(at: lineIndex)
+				continue
+			}
+			line = currentLine
+			lineIndex += 1
+		}
+		return lines
+	}
+	
 	func sort(range: DHTextRange) {
 		if range.start.line == range.end.line {
 			// nothing to do
@@ -16,29 +32,20 @@ extension NSMutableArray {
 		}
 		var selectedLines = [String]()
 		for lineIndex in range.start.line ... range.end.line {
-			selectedLines.append(self[lineIndex] as! String)
+			guard let line = self[lineIndex] as? String else {
+				continue
+			}
+			selectedLines.append(line)
 		}
 		let initialLinesCount = selectedLines.count
 		selectedLines.sort()
-		var lineIndex = 1
-		
-		// delete doubled lines
-		var line = selectedLines.first!
-		while lineIndex < selectedLines.count {
-			let currentLine = selectedLines[lineIndex]
-			if currentLine == line {
-				selectedLines.remove(at: lineIndex)
-				continue
-			}
-			line = currentLine
-			lineIndex += 1
-		}
+		selectedLines = removeDoubledLines(from: selectedLines)
 		
 		// replace old lines with new ones
-		lineIndex = range.start.line
+		var replaceLineIndex = range.start.line
 		for line in selectedLines {
-			self[lineIndex] = line
-			lineIndex += 1
+			self[replaceLineIndex] = line
+			replaceLineIndex += 1
 		}
 		
 		// remove extra lines
@@ -59,7 +66,7 @@ extension NSMutableArray {
 		guard let sourceLine = (self[position.line - 1] as? String) else {
 			return position
 		}
-		guard position.column < sourceLine.characters.count - 1 else {
+		guard position.column < sourceLine.count - 1 else {
 			return position
 		}
 		guard var updatingLine = (self[position.line] as? String) else {
@@ -80,7 +87,7 @@ extension NSMutableArray {
 		updatingLine = "\(String(prefix))\(lineToBeInserted)\(String(suffix))"
 		self[position.line] = updatingLine
 		
-		return DHTextPosition(line: position.line, column: position.column + lineToBeInserted.characters.count)
+		return DHTextPosition(line: position.line, column: position.column + lineToBeInserted.count)
 	}
 	
 	func comment(range: DHTextRange) -> DHTextRange {

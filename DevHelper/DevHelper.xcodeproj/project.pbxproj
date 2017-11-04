@@ -32,7 +32,6 @@
 		278A79841E7340E9008179F9 /* SortCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278A79831E7340E9008179F9 /* SortCommand.swift */; };
 		278DEEE71F9C84D200AE030F /* CopyLine.test in Resources */ = {isa = PBXBuildFile; fileRef = 278DEEE61F9C84D200AE030F /* CopyLine.test */; };
 		278DEEEA1F9C851D00AE030F /* CopyLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DEEE91F9C851D00AE030F /* CopyLineTests.swift */; };
-		278DEEEB1F9C8C9700AE030F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 278A79851E7340E9008179F9 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -289,7 +288,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Alexey Golovenkov";
 				TargetAttributes = {
 					278A79551E7340AD008179F9 = {
@@ -359,7 +358,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				278DEEEB1F9C8C9700AE030F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
