@@ -12,14 +12,16 @@ import XcodeKit
 class CopyLineAboveCommand: NSObject, XCSourceEditorCommand {
 	func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
 		for selection in invocation.buffer.selections {
-			guard let range = DHTextRange(textRange: selection as? XCSourceTextRange) else {
+            guard let position = selection as? XCSourceTextRange else {
+                continue;
+            }            
+			guard let range = DHTextRange(textRange: position) else {
 				continue
 			}
 			guard range.isCursorPosition() else {
 				continue
 			}
 			let newPosition = invocation.buffer.lines.copyLineAbove(position: range.start)
-			let position = selection as! XCSourceTextRange
 			position.start.column = newPosition.column
 			position.start.line = newPosition.line
 			position.end.column = newPosition.column
