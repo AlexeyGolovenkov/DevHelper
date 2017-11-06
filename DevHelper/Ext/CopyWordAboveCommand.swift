@@ -10,7 +10,7 @@ import Cocoa
 import XcodeKit
 
 class CopyLineAboveCommand: NSObject, XCSourceEditorCommand {
-	func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
+	func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) {
 		for selection in invocation.buffer.selections {
             guard let position = selection as? XCSourceTextRange else {
                 continue;

@@ -31,8 +31,8 @@ class SortCommandTests: XCTestCase {
 			return
 		}
 	
-		let lines = source.lines()
-		let range = DHTextRange()
+        let lines = source.lines()
+        let range = DHTextRange()
 		range.start = DHTextPosition(line: 7, column: 1)
 		range.end = DHTextPosition(line: 11, column: 1)
 		lines.sort(range: range)

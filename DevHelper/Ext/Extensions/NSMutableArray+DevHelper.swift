@@ -128,4 +128,70 @@ extension NSMutableArray {
 		}
 		return string
 	}
+    
+    // MARK: Remove comments
+    func removeComments(around position: DHTextPosition) -> DHTextRange {
+        guard let commentRange = self.commentBounds(around: position) else {
+            return DHTextRange(start: position, end: position)
+        }
+        
+        guard var endLine = self[commentRange.end.line] as? String else {
+            return DHTextRange(start: position, end: position)
+        }
+        var removingInsdexStart = endLine.index(endLine.startIndex, offsetBy: commentRange.end.column)
+        var removingIndexEnd = endLine.index(removingInsdexStart, offsetBy: 1);
+        var removingRange = removingInsdexStart...removingIndexEnd
+        endLine.removeSubrange(removingRange)
+        self[commentRange.end.line] = endLine
+        
+        guard var beginLine = self[commentRange.start.line] as? String else {
+            return DHTextRange(start: position, end: position)
+        }
+        removingInsdexStart = beginLine.index(beginLine.startIndex, offsetBy: commentRange.start.column)
+        removingIndexEnd = beginLine.index(removingInsdexStart, offsetBy: 1);
+        removingRange = removingInsdexStart...removingIndexEnd
+        beginLine.removeSubrange(removingRange)
+        self[commentRange.start.line] = beginLine
+        
+        return commentRange
+    }
+    
+    func commentBounds(around position: DHTextPosition) -> DHTextRange? {
+        guard let positionOfCommentStart = self.positionOfCommentStart(from: position) else {
+            return nil
+        }
+        
+        guard let positionOfCommentEnd = self.positionOfCommentEnd(from: position) else {
+            return nil
+        }
+        
+        return DHTextRange(start: positionOfCommentStart, end: positionOfCommentEnd)
+    }
+    
+    func positionOfCommentStart(from position: DHTextPosition) -> DHTextPosition? {
+        // TODO: Add multiline comments support
+        guard let string = self[position.line] as? String else {
+            return nil
+        }
+        
+        guard let startPosition = string.positionOfCommentStart(from: position.column) else {
+            return nil;
+        }
+        
+        return DHTextPosition(line: position.line, column: startPosition)
+    }
+    
+    func positionOfCommentEnd(from position: DHTextPosition) -> DHTextPosition? {
+        // TODO: Add multiline comments support
+        guard let string = self[position.line] as? String else {
+            return nil
+        }
+        
+        guard let startPosition = string.positionOfCommentEnd(from: position.column) else {
+            return nil;
+        }
+        
+        return DHTextPosition(line: position.line, column: startPosition)
+    }
+    
 }

@@ -20,6 +20,12 @@ struct DHTextPosition: Equatable {
 class DHTextRange: NSObject {
 	var start = DHTextPosition(line: 0, column: 0)
 	var end = DHTextPosition(line: 0, column: 0)
+    
+    convenience init(start: DHTextPosition, end: DHTextPosition) {
+        self.init()
+        self.start = start
+        self.end = end
+    }
 	
 	func isCursorPosition() -> Bool {
 		return self.start == self.end

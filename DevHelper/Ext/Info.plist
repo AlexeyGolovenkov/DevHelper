@@ -60,6 +60,14 @@
 					<key>XCSourceEditorCommandName</key>
 					<string>Copy line to clipboard</string>
 				</dict>
+				<dict>
+					<key>XCSourceEditorCommandClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).UncommentCommand</string>
+					<key>XCSourceEditorCommandIdentifier</key>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).UncommentCommand</string>
+					<key>XCSourceEditorCommandName</key>
+					<string>Uncomment</string>
+				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
 			<string>$(PRODUCT_MODULE_NAME).SourceEditorExtension</string>

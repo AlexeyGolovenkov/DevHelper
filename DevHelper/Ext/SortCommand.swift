@@ -13,7 +13,7 @@ import XcodeKit
 /// Sorts selected lines and deletes duplicates
 class SortCommand: NSObject, XCSourceEditorCommand {
     
-	func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
+	func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) {
 		for selection in invocation.buffer.selections {
 			guard let range = DHTextRange(textRange: selection as? XCSourceTextRange) else {
 				continue
