@@ -17,7 +17,7 @@
 
 @property /*(weak, nonatomic)*/ IBOutlet /*UITextField*/ *titleField;
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
-@proper/*ty /*(weak, nonatomic)*/ IBOutlet UITextView*/ *notesView;
+@property /*(weak, nonatomic)*/ IBOutlet UITextView *notesView;
 
 @end
 

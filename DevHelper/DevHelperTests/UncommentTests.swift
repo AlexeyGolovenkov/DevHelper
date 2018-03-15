@@ -53,4 +53,61 @@ class UncommentTests: XCTestCase {
         let textWithoutComments = lines.componentsJoined(by: "\n")
         XCTAssertEqual(textWithoutComments, correctedText, "Source text should not be changed")
     }
+    
+    func testInSecondCommentedBlock() {
+        guard let source = String(testFileName:"UncommentSource.test") else {
+            XCTFail("Source test file not found")
+            return
+        }
+        guard let correctedText = String(testFileName:"UncommentInline2.test") else {
+            XCTFail("Source test file not found")
+            return
+        }
+        
+        let lines = source.lines()
+        let range = DHTextRange()
+        range.start = DHTextPosition(line: 17, column: 46)
+        range.end = DHTextPosition(line: 17, column: 46)
+        let _ = lines.removeComments(around: range.start)
+        let textWithoutComments = lines.componentsJoined(by: "\n")
+        XCTAssertEqual(textWithoutComments, correctedText, "Source text should not be changed")
+    }
+    
+    func testOutNestedCommentedBlock() {
+        guard let source = String(testFileName:"UncommentSource.test") else {
+            XCTFail("Source test file not found")
+            return
+        }
+        guard let correctedText = String(testFileName:"UncommentNestedOutside.test") else {
+            XCTFail("Source test file not found")
+            return
+        }
+        
+        let lines = source.lines()
+        let range = DHTextRange()
+        range.start = DHTextPosition(line: 19, column: 11)
+        range.end = DHTextPosition(line: 19, column: 11)
+        let _ = lines.removeComments(around: range.start)
+        let textWithoutComments = lines.componentsJoined(by: "\n")
+        XCTAssertEqual(textWithoutComments, correctedText, "Source text should not be changed")
+    }
+    
+    func testInNestedCommentedBlock() {
+        guard let source = String(testFileName:"UncommentSource.test") else {
+            XCTFail("Source test file not found")
+            return
+        }
+        guard let correctedText = String(testFileName:"UncommentNestedInside.test") else {
+            XCTFail("Source test file not found")
+            return
+        }
+        
+        let lines = source.lines()
+        let range = DHTextRange()
+        range.start = DHTextPosition(line: 19, column: 30)
+        range.end = DHTextPosition(line: 19, column: 30)
+        let _ = lines.removeComments(around: range.start)
+        let textWithoutComments = lines.componentsJoined(by: "\n")
+        XCTAssertEqual(textWithoutComments, correctedText, "Source text should not be changed")
+    }
 }
