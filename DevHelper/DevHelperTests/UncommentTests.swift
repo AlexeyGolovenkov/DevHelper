@@ -110,4 +110,42 @@ class UncommentTests: XCTestCase {
         let textWithoutComments = lines.componentsJoined(by: "\n")
         XCTAssertEqual(textWithoutComments, correctedText, "Source text should not be changed")
     }
+    
+    func testInMutilineCommentedBlock() {
+        guard let source = String(testFileName:"UncommentSource.test") else {
+            XCTFail("Source test file not found")
+            return
+        }
+        guard let correctedText = String(testFileName:"UncommentMultilineInside.test") else {
+            XCTFail("Source test file not found")
+            return
+        }
+        
+        let lines = source.lines()
+        let range = DHTextRange()
+        range.start = DHTextPosition(line: 29, column: 3)
+        range.end = DHTextPosition(line: 29, column: 3)
+        let _ = lines.removeComments(around: range.start)
+        let textWithoutComments = lines.componentsJoined(by: "\n")
+        XCTAssertEqual(textWithoutComments, correctedText, "Source text should not be changed")
+    }
+    
+    func testOutMutilineCommentedBlock() {
+        guard let source = String(testFileName:"UncommentSource.test") else {
+            XCTFail("Source test file not found")
+            return
+        }
+        guard let correctedText = String(testFileName:"UncommentMultilineOutside.test") else {
+            XCTFail("Source test file not found")
+            return
+        }
+        
+        let lines = source.lines()
+        let range = DHTextRange()
+        range.start = DHTextPosition(line: 24, column: 3)
+        range.end = DHTextPosition(line: 24, column: 3)
+        let _ = lines.removeComments(around: range.start)
+        let textWithoutComments = lines.componentsJoined(by: "\n")
+        XCTAssertEqual(textWithoutComments, correctedText, "Source text should not be changed")
+    }
 }
