@@ -1,3 +1,4 @@
+[![codebeat badge](https://codebeat.co/badges/220442c0-eb9a-4369-a387-2e611ae90f00)](https://codebeat.co/projects/github-com-alexeygolovenkov-devhelper-master)
 # DevHelper
 Small extension for Xcode editor
 
