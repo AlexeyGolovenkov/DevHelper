@@ -32,6 +32,7 @@
 		278A79841E7340E9008179F9 /* SortCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278A79831E7340E9008179F9 /* SortCommand.swift */; };
 		278DEEE71F9C84D200AE030F /* CopyLine.test in Resources */ = {isa = PBXBuildFile; fileRef = 278DEEE61F9C84D200AE030F /* CopyLine.test */; };
 		278DEEEA1F9C851D00AE030F /* CopyLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DEEE91F9C851D00AE030F /* CopyLineTests.swift */; };
+		27B99606206112A300EA7F75 /* ArrayOfStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B99605206112A300EA7F75 /* ArrayOfStringTests.swift */; };
 		27F978FA1FAE026600348F7D /* UncommentCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F978F81FAE025B00348F7D /* UncommentCommand.swift */; };
 		27F979021FAEF33900348F7D /* UncommentNestedOutside.test in Resources */ = {isa = PBXBuildFile; fileRef = 27F978FB1FAEF33800348F7D /* UncommentNestedOutside.test */; };
 		27F979031FAEF33900348F7D /* UncommentInline1.test in Resources */ = {isa = PBXBuildFile; fileRef = 27F978FC1FAEF33900348F7D /* UncommentInline1.test */; };
@@ -108,6 +109,7 @@
 		278A79851E7340E9008179F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		278DEEE61F9C84D200AE030F /* CopyLine.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CopyLine.test; sourceTree = "<group>"; };
 		278DEEE91F9C851D00AE030F /* CopyLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyLineTests.swift; sourceTree = "<group>"; };
+		27B99605206112A300EA7F75 /* ArrayOfStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayOfStringTests.swift; sourceTree = "<group>"; };
 		27F978F81FAE025B00348F7D /* UncommentCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncommentCommand.swift; sourceTree = "<group>"; };
 		27F978FB1FAEF33800348F7D /* UncommentNestedOutside.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UncommentNestedOutside.test; sourceTree = "<group>"; };
 		27F978FC1FAEF33900348F7D /* UncommentInline1.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UncommentInline1.test; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				274CBA3A1E7584CD00D20B52 /* DHTextRangeTests.swift */,
 				278DEEE91F9C851D00AE030F /* CopyLineTests.swift */,
 				27F979091FAEFBB200348F7D /* UncommentTests.swift */,
+				27B99605206112A300EA7F75 /* ArrayOfStringTests.swift */,
 				27F9790F1FAF0A1E00348F7D /* StringTests.swift */,
 				275EB3CB1E73E9DC00CCAF22 /* String+Test.swift */,
 				278A796D1E7340AD008179F9 /* Info.plist */,
@@ -425,6 +428,7 @@
 				275EB3CC1E73E9DC00CCAF22 /* String+Test.swift in Sources */,
 				274CBA3B1E7584CD00D20B52 /* DHTextRangeTests.swift in Sources */,
 				27F9790A1FAEFBB200348F7D /* UncommentTests.swift in Sources */,
+				27B99606206112A300EA7F75 /* ArrayOfStringTests.swift in Sources */,
 				27F979101FAF0A1E00348F7D /* StringTests.swift in Sources */,
 				275EB3DE1E73FE4900CCAF22 /* SortCommandTests.swift in Sources */,
 			);
