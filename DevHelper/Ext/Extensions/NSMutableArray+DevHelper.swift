@@ -194,4 +194,92 @@ extension NSMutableArray {
         return DHTextPosition(line: position.line, column: startPosition)
     }
     
+    func position(of string: String, between startPosition: DHTextPosition?, and endPosition: DHTextPosition?, direction: NSString.CompareOptions) -> DHTextPosition? {
+        let startPosition = startPosition ?? DHTextPosition(line: 0, column: 0)
+        let endPosition = endPosition ?? DHTextPosition(line: self.count - 1, column: ((self.lastObject as? String)?.count ?? 0))
+        
+        if direction.contains(.backwards) {
+            return backwardPosition(of: string, between: startPosition, and: endPosition)
+        } else {
+            return straitPosition(of: string, between: startPosition, and: endPosition, direction: [])
+        }
+    }
+    
+    func straitPosition(of string: String, between startPosition: DHTextPosition!, and endPosition: DHTextPosition!, direction: NSString.CompareOptions) -> DHTextPosition? {
+        let lookingRange: StrideThrough<Int>
+        if direction.contains(.backwards) {
+            lookingRange = stride(from:endPosition.line, through:startPosition.line, by:-1)
+        } else {
+            lookingRange = stride(from:startPosition.line, through:endPosition.line, by:1)
+        }
+        
+        for lineIndex in lookingRange {
+            guard let line = self[lineIndex] as? String else {
+                continue
+            }
+            guard let startIndex = self.startIndex(from: startPosition, ofLineAt: lineIndex) else {
+                continue
+            }
+            guard let endIndex = self.endIndex(to: endPosition, ofLineAt: lineIndex) else {
+                continue
+            }
+            let checkingRange = startIndex ..< endIndex
+            if let foundIndex = line.range(of: string, options: direction, range: checkingRange) {
+                let column = line.distance(from: line.startIndex, to: foundIndex.lowerBound)
+                return DHTextPosition(line: lineIndex, column: column)
+            }
+        }
+        
+        return nil
+    }
+    
+    func backwardPosition(of string: String, between startPosition: DHTextPosition!, and endPosition: DHTextPosition!) -> DHTextPosition? {
+        return nil
+    }
+    
+    func startIndex(from position: DHTextPosition, ofLineAt lineIndex: Int/*, direction: String.CompareOptions*/) -> String.Index? {
+        guard let line = self[position.line] as? String else {
+            return nil
+        }
+        if position.line == lineIndex {
+            return line.index(line.startIndex, offsetBy: position.column)
+        }
+//        if direction.contains(.backwards) {
+//            if lineIndex < position.line {
+//                return line.endIndex
+//            } else {
+//                return nil
+//            }
+//        } else {
+            if lineIndex < position.line {
+                return nil
+            } else {
+                return line.startIndex
+            }
+//        }
+    }
+    
+    func endIndex(to position: DHTextPosition, ofLineAt lineIndex: Int/*, direction: String.CompareOptions*/) -> String.Index? {
+        guard let line = self[position.line] as? String else {
+            return nil
+        }
+        if position.line == lineIndex {
+            return line.index(line.startIndex, offsetBy: position.column)
+        }
+//        if direction.contains(.backwards) {
+//            if lineIndex < position.line {
+//                return line.endIndex
+//            } else {
+//                return nil
+//            }
+//        } else {
+            if lineIndex < position.line {
+                return line.endIndex
+            } else {
+                return nil
+            }
+//        }
+    }
+    
+    
 }
