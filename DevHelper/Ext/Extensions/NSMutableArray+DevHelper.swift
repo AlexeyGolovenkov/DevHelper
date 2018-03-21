@@ -153,7 +153,13 @@ extension NSMutableArray {
         beginLine.removeSubrange(removingRange)
         self[commentRange.start.line] = beginLine
         
-        return commentRange
+        var cursorPosition = position
+        if commentRange.start.line == position.line {
+            cursorPosition.column -= 2
+        }
+        let range = DHTextRange(start: cursorPosition, end: cursorPosition)
+        
+        return range
     }
     
     func commentBounds(around position: DHTextPosition) -> DHTextRange? {
@@ -169,7 +175,6 @@ extension NSMutableArray {
     }
     
     func positionOfCommentStart(from position: DHTextPosition) -> DHTextPosition? {
-//        return self.position(of: "/*", between: nil, and: position, direction: [.backwards])
         var numberOfStartComments = 1
         var positionOfStartComment = self.position(of: "/*", between: nil, and: position, direction: [.backwards])
         if positionOfStartComment == nil {
