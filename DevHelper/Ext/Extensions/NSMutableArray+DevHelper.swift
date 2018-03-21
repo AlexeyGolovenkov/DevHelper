@@ -169,29 +169,70 @@ extension NSMutableArray {
     }
     
     func positionOfCommentStart(from position: DHTextPosition) -> DHTextPosition? {
-        // TODO: Add multiline comments support
-        guard let string = self[position.line] as? String else {
+//        return self.position(of: "/*", between: nil, and: position, direction: [.backwards])
+        var numberOfStartComments = 1
+        var positionOfStartComment = self.position(of: "/*", between: nil, and: position, direction: [.backwards])
+        if positionOfStartComment == nil {
             return nil
         }
-        
-        guard let startPosition = string.positionOfCommentStart(from: position.column) else {
-            return nil;
+        var numberOfCloseComment = self.number(of: "*/", between: positionOfStartComment!, and: position)
+        while numberOfCloseComment >= numberOfStartComments {
+            numberOfStartComments += 1
+            var previousPoint = positionOfStartComment!
+            previousPoint.column -= 1
+            if previousPoint.column < 0 {
+                previousPoint.line -= 1
+                if previousPoint.line < 0 {
+                    return nil
+                }
+                previousPoint.column = (self[previousPoint.line] as? String)?.count ?? 0
+            }
+            
+            positionOfStartComment = self.position(of: "/*", between: nil, and: previousPoint, direction: [.backwards])
+            if positionOfStartComment == nil {
+                return nil
+            }
+            numberOfCloseComment = self.number(of: "*/", between: positionOfStartComment!, and: position)
         }
-        
-        return DHTextPosition(line: position.line, column: startPosition)
+        return positionOfStartComment
     }
     
     func positionOfCommentEnd(from position: DHTextPosition) -> DHTextPosition? {
-        // TODO: Add multiline comments support
-        guard let string = self[position.line] as? String else {
+        var numberOfEndComments = 1
+        var positionOfEndComment = self.position(of: "*/", between: position, and:nil, direction: [])
+        if positionOfEndComment == nil {
             return nil
         }
-        
-        guard let startPosition = string.positionOfCommentEnd(from: position.column) else {
-            return nil;
+        var numberOfOpenComments = self.number(of: "/*", between: position, and: positionOfEndComment!)
+        while numberOfOpenComments >= numberOfEndComments {
+            numberOfEndComments += 1
+            let nextPoint = DHTextPosition(line: positionOfEndComment!.line, column: positionOfEndComment!.column + 1)
+            positionOfEndComment = self.position(of: "*/", between: nextPoint, and:nil, direction: [])
+            if positionOfEndComment == nil {
+                return nil
+            }
+            numberOfOpenComments = self.number(of: "/*", between: position, and: positionOfEndComment!)
+        }
+        return positionOfEndComment
+    }
+    
+    func number(of substring: String, between startPosition: DHTextPosition, and endPosition: DHTextPosition) -> Int {
+        var instancesCount = 0
+        for lineIndex in startPosition.line ... endPosition.line {
+            guard let line = self[lineIndex] as? String else {
+                continue
+            }
+            guard let startIndex = self.startIndex(from: startPosition, ofLineAt: lineIndex) else {
+                continue
+            }
+            guard let endIndex = self.endIndex(to: endPosition, ofLineAt: lineIndex) else {
+                continue
+            }
+            
+            instancesCount += line.countInstances(of: substring, in: (startIndex ..< endIndex))
         }
         
-        return DHTextPosition(line: position.line, column: startPosition)
+        return instancesCount
     }
     
     func position(of string: String, between startPosition: DHTextPosition?, and endPosition: DHTextPosition?, direction: NSString.CompareOptions) -> DHTextPosition? {

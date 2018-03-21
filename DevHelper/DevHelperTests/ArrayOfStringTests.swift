@@ -43,4 +43,16 @@ class ArrayOfStringTests: XCTestCase {
         let correctPosition = DHTextPosition(line: 25, column: 0)
         XCTAssertEqual(endCommentPostion, correctPosition, "Wrong position of */ symbol")
     }
+    
+    func testPositionOfCommentEnd() {
+        guard let source = String(testFileName:"UncommentSource.test") else {
+            XCTFail("Source test file not found")
+            return
+        }
+        let lines = source.lines()
+        let startPosition = DHTextPosition(line: 24, column: 3)
+        let positionOfCommentEnd = lines.positionOfCommentEnd(from: startPosition)
+        let correctPosition = DHTextPosition(line: 33, column: 0)
+        XCTAssertEqual(positionOfCommentEnd, correctPosition, "Wrong position: \(String(describing: positionOfCommentEnd))")
+    }
 }

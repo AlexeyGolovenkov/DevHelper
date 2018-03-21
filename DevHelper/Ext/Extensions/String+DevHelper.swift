@@ -9,6 +9,19 @@
 import Foundation
 
 extension String {
+    func countInstances(of stringToFind: String, in range: Range<String.Index>) -> Int {
+        guard stringToFind.count > 0 else {
+            return 0
+        }
+//        var stringToSearch = String(self[range])
+        var count = 0
+        if let foundRange = self.range(of: stringToFind, options: .diacriticInsensitive, range: range) {
+            let newRange = (foundRange.upperBound) ..< (range.upperBound)
+            count = 1 + countInstances(of: stringToFind, in: newRange)
+        }
+        return count
+    }
+    
     func positionOfCommentStart(from column: Int) -> Int? {
         let finishIndex = self.index(self.startIndex, offsetBy: column)
         let startIndex = self.startIndex

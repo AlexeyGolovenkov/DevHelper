@@ -87,4 +87,16 @@ class StringTests: XCTestCase {
         secondFoundPosition = nestedCommentsString.positionOfCommentEnd(from: 45)
         XCTAssertEqual(secondFoundPosition, 56, "Wrong found position: \(secondFoundPosition!)")
     }
+    
+    func testCountOfInstances() {
+        let string = "@property /*(weak, nonatomic)*/ IBOutlet /*UITextField*/ *titleField;"
+        let instancesInWholeString = string.countInstances(of: "*/", in: (string.startIndex ..< string.endIndex))
+        XCTAssertEqual(instancesInWholeString, 2, "Wrong number of instances in whole string: \(instancesInWholeString) instead of 2")
+        let startIndex = string.index(string.startIndex, offsetBy: 15)
+        let instancesInFirstComment = string.countInstances(of: "/*", in: (startIndex ..< string.endIndex))
+        XCTAssertEqual(instancesInFirstComment, 1, "Wrong number of instances in whole string: \(instancesInFirstComment) instead of 1")
+        let endIndex = string.index(startIndex, offsetBy: 4)
+        let notFoundCount = string.countInstances(of: "*/", in: (startIndex ..< endIndex))
+        XCTAssertEqual(notFoundCount, 0, "Found intances: \(notFoundCount) instead of 0")
+    }
 }
