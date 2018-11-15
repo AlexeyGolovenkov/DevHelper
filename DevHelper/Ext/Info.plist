@@ -46,19 +46,19 @@
 				</dict>
 				<dict>
 					<key>XCSourceEditorCommandClassName</key>
-					<string>$(PRODUCT_MODULE_NAME).CommentCommand</string>
-					<key>XCSourceEditorCommandIdentifier</key>
-					<string>$(PRODUCT_BUNDLE_IDENTIFIER).CommentCommand</string>
-					<key>XCSourceEditorCommandName</key>
-					<string>Comment out</string>
-				</dict>
-				<dict>
-					<key>XCSourceEditorCommandClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).CopyLineCommand</string>
 					<key>XCSourceEditorCommandIdentifier</key>
 					<string>$(PRODUCT_BUNDLE_IDENTIFIER).CopyLineCommand</string>
 					<key>XCSourceEditorCommandName</key>
 					<string>Copy line to clipboard</string>
+				</dict>
+				<dict>
+					<key>XCSourceEditorCommandClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).CommentCommand</string>
+					<key>XCSourceEditorCommandIdentifier</key>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).CommentCommand</string>
+					<key>XCSourceEditorCommandName</key>
+					<string>Comment out</string>
 				</dict>
 				<dict>
 					<key>XCSourceEditorCommandClassName</key>
