@@ -109,6 +109,7 @@
 		278A79851E7340E9008179F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		278DEEE61F9C84D200AE030F /* CopyLine.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CopyLine.test; sourceTree = "<group>"; };
 		278DEEE91F9C851D00AE030F /* CopyLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyLineTests.swift; sourceTree = "<group>"; };
+		27A4B51721A56D4B007655AD /* DevHelperContainer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevHelperContainer.entitlements; sourceTree = "<group>"; };
 		27B99605206112A300EA7F75 /* ArrayOfStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayOfStringTests.swift; sourceTree = "<group>"; };
 		27F978F81FAE025B00348F7D /* UncommentCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncommentCommand.swift; sourceTree = "<group>"; };
 		27F978FB1FAEF33800348F7D /* UncommentNestedOutside.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UncommentNestedOutside.test; sourceTree = "<group>"; };
@@ -182,6 +183,7 @@
 		278A794D1E7340AD008179F9 = {
 			isa = PBXGroup;
 			children = (
+				27A4B51721A56D4B007655AD /* DevHelperContainer.entitlements */,
 				278A79581E7340AD008179F9 /* DevHelper */,
 				278A796A1E7340AD008179F9 /* DevHelperTests */,
 				278A797E1E7340E9008179F9 /* Ext */,
@@ -333,6 +335,11 @@
 						DevelopmentTeam = VKPEBSVB5E;
 						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					278A79661E7340AD008179F9 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -589,6 +596,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DevHelperContainer.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VKPEBSVB5E;
@@ -605,6 +613,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DevHelperContainer.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VKPEBSVB5E;
