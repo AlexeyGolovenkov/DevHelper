@@ -2,6 +2,10 @@
 # DevHelper
 Small extension for Xcode editor
 
+<p align="center">
+    <img src="Images/icon.png" alt="DevHelper" />
+</p>
+
 I love small inconspicuous tools that always are at my hands. So this project is a set of such tools that make my code editing a bit faster and comfort. I recommend to specify a hot key for most of these gears and try to use them in your daily practice.
 
 ## Installation
