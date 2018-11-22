@@ -11,6 +11,8 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    var mainWindowIsClosed = true
+    
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		// Insert code here to initialize your application
 	}
@@ -18,4 +20,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationWillTerminate(_ aNotification: Notification) {
 		// Insert code here to tear down your application
 	}
+    
+    @IBAction func newMenuItemClicked(_ sender: NSMenuItem) {
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        if let windowController = storyboard.instantiateInitialController() as? NSWindowController {
+            windowController.showWindow(self)
+        }
+    }
+}
+
+extension AppDelegate: NSMenuItemValidation {
+    
+    func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+        if menuItem.title == "New" {
+            return mainWindowIsClosed
+        }
+        return true
+    }
 }

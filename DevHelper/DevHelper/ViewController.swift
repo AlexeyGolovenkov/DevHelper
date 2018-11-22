@@ -13,7 +13,7 @@ class ViewController: NSViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		// Do any additional setup after loading the view.
+		(NSApplication.shared.delegate as? AppDelegate)?.mainWindowIsClosed = false
 	}
 
 	override var representedObject: Any? {
@@ -21,4 +21,8 @@ class ViewController: NSViewController {
 		// Update the view, if already loaded.
 		}
 	}
+    
+    override func viewDidDisappear() {
+        (NSApplication.shared.delegate as? AppDelegate)?.mainWindowIsClosed = true
+    }
 }
