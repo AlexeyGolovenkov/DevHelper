@@ -11,6 +11,8 @@ I love small inconspicuous tools that always are at my hands. So this project is
 ## Installation
 Clone the project, open it in Xcode and set your dev team for DevHelper and DevHelperContainer targets, then Product -> Archive. Then, in Organizer, choose "Export..." and "Export as macOS-application". As soon as app is run it install the extension. The extension may have to be enabled from your system preferences, in the Extensions-pane. The extension will be activated after Xcode restart.
 
+If you do not like this method or if you want to help the project, it is available in the [App Store](https://itunes.apple.com/us/app/dev-helper/id1442483953?ls=1&mt=12).
+
 ## Usage
 DevHelper is a native Xcode editor extension. You can find it in the bottom of Editor menu in code editing mode. Also you can set hot keys for the items you plan to use often. Open Xcode preferences, navigate to Key Bindings pane and type devhelper in search. Then double click on the right side of the window in front of the item you want to bind to keyboard and just press a key combination. Done!
 
