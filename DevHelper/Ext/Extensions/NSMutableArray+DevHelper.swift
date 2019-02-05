@@ -312,4 +312,9 @@ extension NSMutableArray {
             return nil
         }
     }
+    
+    func addSwiftExtension(for position: DHTextPosition) -> DHTextRange {
+        
+        return DHTextRange(start: position, end: position)
+    }
 }

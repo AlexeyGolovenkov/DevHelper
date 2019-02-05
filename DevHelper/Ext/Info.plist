@@ -68,6 +68,14 @@
 					<key>XCSourceEditorCommandName</key>
 					<string>Uncomment</string>
 				</dict>
+				<dict>
+					<key>XCSourceEditorCommandClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SwtExtensionCommand</string>
+					<key>XCSourceEditorCommandIdentifier</key>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).SwtExtensionCommand</string>
+					<key>XCSourceEditorCommandName</key>
+					<string>Extension</string>
+				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
 			<string>$(PRODUCT_MODULE_NAME).SourceEditorExtension</string>

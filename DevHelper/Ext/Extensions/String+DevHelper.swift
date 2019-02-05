@@ -13,7 +13,6 @@ extension String {
         guard stringToFind.count > 0 else {
             return 0
         }
-//        var stringToSearch = String(self[range])
         var count = 0
         if let foundRange = self.range(of: stringToFind, options: .diacriticInsensitive, range: range) {
             let newRange = (foundRange.upperBound) ..< (range.upperBound)
