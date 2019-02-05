@@ -60,11 +60,22 @@ extension String {
     }
     
     func className() -> String? {
-        let regex = "(class|struct|enum) +(([A-Z]|_|[0-9])+)"
+        let pattern = "(class|struct|enum) +(([A-Z]|_|[0-9])+)"
+        guard let regexp = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive) else {
+            return nil
+        }
         
-        
-        
-        
-        return nil
+        let string = self as NSString
+        let foundStrings = regexp.matches(in: string as String, options: [], range: NSRange(location: 0, length: string.length))
+        guard foundStrings.count > 0 else {
+            return nil
+        }
+        let firstResult = foundStrings[0]
+        guard firstResult.numberOfRanges > 3 else {
+            return nil
+        }
+        let range = firstResult.range(at: 2)
+        let name = string.substring(with: range)
+        return name
     }
 }

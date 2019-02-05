@@ -111,7 +111,7 @@ class StringTests: XCTestCase {
         
         let structString = "struct LiveChatToken {"
         let structName = structString.className()
-        XCTAssertTrue(className == "LiveChatToken", "Wrong struct name: \(String(describing: structName))")
+        XCTAssertTrue(structName == "LiveChatToken", "Wrong struct name: \(String(describing: structName))")
         
         let enumString = "public enum Style: String {"
         let enumName = enumString.className()
