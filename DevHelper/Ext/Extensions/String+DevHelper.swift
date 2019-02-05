@@ -58,4 +58,13 @@ extension String {
         }
         return foundPosition
     }
+    
+    func className() -> String? {
+        let regex = "(class|struct|enum) +(([A-Z]|_|[0-9])+)"
+        
+        
+        
+        
+        return nil
+    }
 }

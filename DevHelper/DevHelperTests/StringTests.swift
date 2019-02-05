@@ -99,4 +99,22 @@ class StringTests: XCTestCase {
         let notFoundCount = string.countInstances(of: "*/", in: (startIndex ..< endIndex))
         XCTAssertEqual(notFoundCount, 0, "Found intances: \(notFoundCount) instead of 0")
     }
+    
+    func testClassName() {
+        let codeString = "let startIndex = string.index(string.startIndex, offsetBy: 15)"
+        let nonameString = codeString.className()
+        XCTAssertNil(nonameString, "Noname string must be nil. Real result: \(String(describing: nonameString))")
+        
+        let classString = "class SourceEditorExtension: NSObject, XCSourceEditorExtension {"
+        let className = classString.className()
+        XCTAssertTrue(className == "SourceEditorExtension", "Wrong class name: \(String(describing: className))")
+        
+        let structString = "struct LiveChatToken {"
+        let structName = structString.className()
+        XCTAssertTrue(className == "LiveChatToken", "Wrong struct name: \(String(describing: structName))")
+        
+        let enumString = "public enum Style: String {"
+        let enumName = enumString.className()
+        XCTAssertTrue(enumName == "Style", "Wrong enum name: \(String(describing: enumName))")
+    }
 }
