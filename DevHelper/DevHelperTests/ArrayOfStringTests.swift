@@ -51,7 +51,7 @@ class ArrayOfStringTests: XCTestCase {
         }
         let lines = source.lines()
         let startPosition = DHTextPosition(line: 24, column: 3)
-        let positionOfCommentEnd = lines.positionOfCommentEnd(from: startPosition)
+        let positionOfCommentEnd = lines.positionOfBlockEnd(from: startPosition)
         let correctPosition = DHTextPosition(line: 33, column: 0)
         XCTAssertEqual(positionOfCommentEnd, correctPosition, "Wrong position: \(String(describing: positionOfCommentEnd))")
     }

@@ -163,24 +163,24 @@ extension NSMutableArray {
     }
     
     func commentBounds(around position: DHTextPosition) -> DHTextRange? {
-        guard let positionOfCommentStart = self.positionOfCommentStart(from: position) else {
+        guard let positionOfCommentStart = self.positionOfBlockStart(from: position) else {
             return nil
         }
         
-        guard let positionOfCommentEnd = self.positionOfCommentEnd(from: position) else {
+        guard let positionOfCommentEnd = self.positionOfBlockEnd(from: position) else {
             return nil
         }
         
         return DHTextRange(start: positionOfCommentStart, end: positionOfCommentEnd)
     }
     
-    func positionOfCommentStart(from position: DHTextPosition) -> DHTextPosition? {
+    func positionOfBlockStart(from position: DHTextPosition, startBlockMarker: String = "/*", endBlockMarker: String = "*/") -> DHTextPosition? {
         var numberOfStartComments = 1
-        var positionOfStartComment = self.position(of: "/*", between: nil, and: position, direction: [.backwards])
+        var positionOfStartComment = self.position(of: startBlockMarker, between: nil, and: position, direction: [.backwards])
         if positionOfStartComment == nil {
             return nil
         }
-        var numberOfCloseComment = self.number(of: "*/", between: positionOfStartComment!, and: position)
+        var numberOfCloseComment = self.number(of: endBlockMarker, between: positionOfStartComment!, and: position)
         while numberOfCloseComment >= numberOfStartComments {
             numberOfStartComments += 1
             var previousPoint = positionOfStartComment!
@@ -193,30 +193,30 @@ extension NSMutableArray {
                 previousPoint.column = (self[previousPoint.line] as? String)?.count ?? 0
             }
             
-            positionOfStartComment = self.position(of: "/*", between: nil, and: previousPoint, direction: [.backwards])
+            positionOfStartComment = self.position(of: startBlockMarker, between: nil, and: previousPoint, direction: [.backwards])
             if positionOfStartComment == nil {
                 return nil
             }
-            numberOfCloseComment = self.number(of: "*/", between: positionOfStartComment!, and: position)
+            numberOfCloseComment = self.number(of: endBlockMarker, between: positionOfStartComment!, and: position)
         }
         return positionOfStartComment
     }
     
-    func positionOfCommentEnd(from position: DHTextPosition) -> DHTextPosition? {
+    func positionOfBlockEnd(from position: DHTextPosition, startBlockMarker: String = "/*", endBlockMarker: String = "*/") -> DHTextPosition? {
         var numberOfEndComments = 1
-        var positionOfEndComment = self.position(of: "*/", between: position, and:nil, direction: [])
+        var positionOfEndComment = self.position(of: endBlockMarker, between: position, and:nil, direction: [])
         if positionOfEndComment == nil {
             return nil
         }
-        var numberOfOpenComments = self.number(of: "/*", between: position, and: positionOfEndComment!)
+        var numberOfOpenComments = self.number(of: startBlockMarker, between: position, and: positionOfEndComment!)
         while numberOfOpenComments >= numberOfEndComments {
             numberOfEndComments += 1
             let nextPoint = DHTextPosition(line: positionOfEndComment!.line, column: positionOfEndComment!.column + 1)
-            positionOfEndComment = self.position(of: "*/", between: nextPoint, and:nil, direction: [])
+            positionOfEndComment = self.position(of: endBlockMarker, between: nextPoint, and:nil, direction: [])
             if positionOfEndComment == nil {
                 return nil
             }
-            numberOfOpenComments = self.number(of: "/*", between: position, and: positionOfEndComment!)
+            numberOfOpenComments = self.number(of: startBlockMarker, between: position, and: positionOfEndComment!)
         }
         return positionOfEndComment
     }
