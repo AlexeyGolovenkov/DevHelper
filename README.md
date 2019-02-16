@@ -43,4 +43,10 @@ After
 Copies a previous line to current cursor position. Coping is started from the column where cursor is placed. Useful for number of similar lines of code. Good example - parsing of JSON or NSCoding protocol implementing
 
 ### Comment out
-Add /\* before and \*/ after selected text. Selection is extended by inserted symbols. If selection is empty, just adds symbols at cursor position and move the cursor between.
+Adds /\* before and \*/ after selected text. Selection is extended by inserted symbols. If selection is empty, just adds symbols at cursor position and move the cursor between.
+
+###Uncomment
+Reverse operation. Removes /* */ comment markers around commented code. Just put cursor in commented block and press Editor -> DevHelper -> Uncomment (or corresponding hot key). Supports multiline- and nested comments.
+
+### Swift Extension
+Generates extension for the class you are editing. The extension will be placed right after the class and selection will be moved to it. 
