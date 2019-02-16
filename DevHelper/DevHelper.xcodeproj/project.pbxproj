@@ -33,6 +33,7 @@
 		278DEEE71F9C84D200AE030F /* CopyLine.test in Resources */ = {isa = PBXBuildFile; fileRef = 278DEEE61F9C84D200AE030F /* CopyLine.test */; };
 		278DEEEA1F9C851D00AE030F /* CopyLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DEEE91F9C851D00AE030F /* CopyLineTests.swift */; };
 		27A06C1622098320007AAF5B /* SwtExtensionCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A06C14220982DC007AAF5B /* SwtExtensionCommand.swift */; };
+		27B310C32218BD5B001AB3AF /* SwiftClass.test in Resources */ = {isa = PBXBuildFile; fileRef = 27B310C22218BD5B001AB3AF /* SwiftClass.test */; };
 		27B99606206112A300EA7F75 /* ArrayOfStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B99605206112A300EA7F75 /* ArrayOfStringTests.swift */; };
 		27F978FA1FAE026600348F7D /* UncommentCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F978F81FAE025B00348F7D /* UncommentCommand.swift */; };
 		27F979021FAEF33900348F7D /* UncommentNestedOutside.test in Resources */ = {isa = PBXBuildFile; fileRef = 27F978FB1FAEF33800348F7D /* UncommentNestedOutside.test */; };
@@ -112,6 +113,7 @@
 		278DEEE91F9C851D00AE030F /* CopyLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyLineTests.swift; sourceTree = "<group>"; };
 		27A06C14220982DC007AAF5B /* SwtExtensionCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwtExtensionCommand.swift; sourceTree = "<group>"; };
 		27A4B51721A56D4B007655AD /* DevHelperContainer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevHelperContainer.entitlements; sourceTree = "<group>"; };
+		27B310C22218BD5B001AB3AF /* SwiftClass.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftClass.test; sourceTree = "<group>"; };
 		27B99605206112A300EA7F75 /* ArrayOfStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayOfStringTests.swift; sourceTree = "<group>"; };
 		27F978F81FAE025B00348F7D /* UncommentCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncommentCommand.swift; sourceTree = "<group>"; };
 		27F978FB1FAEF33800348F7D /* UncommentNestedOutside.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UncommentNestedOutside.test; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		275EB3C51E73E82D00CCAF22 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
+				27B310C22218BD5B001AB3AF /* SwiftClass.test */,
 				27F978FC1FAEF33900348F7D /* UncommentInline1.test */,
 				27F979001FAEF33900348F7D /* UncommentInline2.test */,
 				27F978FF1FAEF33900348F7D /* UncommentMultilineInside.test */,
@@ -400,6 +403,7 @@
 				274CBA371E746D4900D20B52 /* SortAndUniqCorrected.test in Resources */,
 				275EB3E71E74008600CCAF22 /* SingleSortSource.test in Resources */,
 				27F979071FAEF33900348F7D /* UncommentInline2.test in Resources */,
+				27B310C32218BD5B001AB3AF /* SwiftClass.test in Resources */,
 				27F979041FAEF33900348F7D /* UncommentNestedInside.test in Resources */,
 				278DEEE71F9C84D200AE030F /* CopyLine.test in Resources */,
 				27F979021FAEF33900348F7D /* UncommentNestedOutside.test in Resources */,

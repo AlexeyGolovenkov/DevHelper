@@ -55,4 +55,28 @@ class ArrayOfStringTests: XCTestCase {
         let correctPosition = DHTextPosition(line: 33, column: 0)
         XCTAssertEqual(positionOfCommentEnd, correctPosition, "Wrong position: \(String(describing: positionOfCommentEnd))")
     }
+    
+    func testClassBracketsStart() {
+        guard let source = String(testFileName:"SwiftClass.test") else {
+            XCTFail("Source test file not found")
+            return
+        }
+        let lines = source.lines()
+        let startPosition = DHTextPosition(line: 11, column: 22)
+        let classStartPosition = lines.positionOfBlockStart(from: startPosition, startBlockMarker: "{", endBlockMarker: "}")
+        let correctPosition = DHTextPosition(line: 10, column: 17)
+        XCTAssertEqual(classStartPosition, correctPosition, "Wrong position: \(String(describing: classStartPosition))")
+    }
+    
+    func testClassBracketsEnd() {
+        guard let source = String(testFileName:"SwiftClass.test") else {
+            XCTFail("Source test file not found")
+            return
+        }
+        let lines = source.lines()
+        let startPosition = DHTextPosition(line: 11, column: 22)
+        let classEndPosition = lines.positionOfBlockEnd(from: startPosition, startBlockMarker: "{", endBlockMarker: "}")
+        let correctPosition = DHTextPosition(line: 42, column: 0)
+        XCTAssertEqual(classEndPosition, correctPosition, "Wrong position: \(String(describing: classEndPosition))")
+    }
 }
