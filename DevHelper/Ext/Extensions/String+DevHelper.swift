@@ -21,44 +21,6 @@ extension String {
         return count
     }
     
-    func positionOfCommentStart(from column: Int) -> Int? {
-        let finishIndex = self.index(self.startIndex, offsetBy: column)
-        let startIndex = self.startIndex
-        let range = startIndex..<finishIndex
-        guard let foundIndex = self.range(of: "/*", options: .backwards, range: range) else {
-            return nil
-        }
-        let foundPosition = self.distance(from: self.startIndex, to: foundIndex.lowerBound)
-        
-        let checkingRange = foundIndex.upperBound..<finishIndex
-        if let _ = self.range(of: "*/", options: [], range: checkingRange) {
-            if foundPosition < 2 {
-                return nil
-            }
-            return self.positionOfCommentStart(from:foundPosition - 1)
-        }
-        return foundPosition
-    }
-    
-    func positionOfCommentEnd(from column: Int) -> Int? {
-        let startIndex = self.index(self.startIndex, offsetBy: column)
-        let endIndex = self.endIndex
-        let range = startIndex..<endIndex
-        guard let foundIndex = self.range(of: "*/", options: [], range: range) else {
-            return nil
-        }
-        let foundPosition = self.distance(from: self.startIndex, to: foundIndex.lowerBound)
-        
-        let checkingRange = startIndex..<foundIndex.upperBound
-        if let _ = self.range(of: "/*", options: [], range: checkingRange) {
-            if foundPosition > self.count - 2 {
-                return nil
-            }
-            return self.positionOfCommentEnd(from:foundPosition + 1)
-        }
-        return foundPosition
-    }
-    
     func className() -> String? {
         let pattern = "(class|struct|enum) +(([A-Z]|_|[0-9])+)"
         guard let regexp = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive) else {
@@ -71,7 +33,7 @@ extension String {
             return nil
         }
         let firstResult = foundStrings[0]
-        guard firstResult.numberOfRanges > 3 else {
+        guard firstResult.numberOfRanges > 2 else {
             return nil
         }
         let range = firstResult.range(at: 2)

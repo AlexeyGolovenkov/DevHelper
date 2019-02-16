@@ -313,6 +313,14 @@ extension NSMutableArray {
         }
     }
     
+    func positionOfClass(over line: Int) -> (lineIndex: Int, className: String)? {
+        for index in (0 ... line).reversed() {
+            
+        }
+        
+        return nil
+    }
+    
     func addSwiftExtension(for position: DHTextPosition) -> DHTextRange {
         
         return DHTextRange(start: position, end: position)
