@@ -9,8 +9,8 @@
 import Cocoa
 
 struct DHTextPosition: Equatable {
-	var line = 0
-	var column = 0
+    var line = 0
+    var column = 0
 	
 	public static func ==(lhs: DHTextPosition, rhs: DHTextPosition) -> Bool {
 		return lhs.column == rhs.column && lhs.line == rhs.line

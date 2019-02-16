@@ -284,7 +284,8 @@ extension NSMutableArray {
             guard let line = self[position.line] as? String else {
                 return nil
             }
-            return line.index(line.startIndex, offsetBy: position.column)
+            let offset = Swift.min(position.column, line.count)
+            return line.index(line.startIndex, offsetBy: offset)
         }
         if lineIndex < position.line {
             return nil
@@ -301,7 +302,8 @@ extension NSMutableArray {
             guard let line = self[position.line] as? String else {
                 return nil
             }
-            return line.index(line.startIndex, offsetBy: position.column)
+            let offset = Swift.min(position.column, line.count)
+            return line.index(line.startIndex, offsetBy: offset)
         }
         if lineIndex < position.line {
             guard let line = self[lineIndex] as? String else {

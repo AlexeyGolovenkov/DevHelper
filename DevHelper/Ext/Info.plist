@@ -74,7 +74,7 @@
 					<key>XCSourceEditorCommandIdentifier</key>
 					<string>$(PRODUCT_BUNDLE_IDENTIFIER).SwtExtensionCommand</string>
 					<key>XCSourceEditorCommandName</key>
-					<string>Extension</string>
+					<string>Swift Extension</string>
 				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>

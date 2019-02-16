@@ -59,6 +59,4 @@ class SortCommandTests: XCTestCase {
 		let correctedText = lines.componentsJoined(by: "\n")
 		XCTAssertEqual(correctedText, corrected, "Text handled with errors")
 	}
-    
-	
 }
