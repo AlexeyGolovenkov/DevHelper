@@ -64,7 +64,7 @@ class ArrayOfStringTests: XCTestCase {
         let lines = source.lines()
         let startPosition = DHTextPosition(line: 11, column: 22)
         let classStartPosition = lines.positionOfBlockStart(from: startPosition, startBlockMarker: "{", endBlockMarker: "}")
-        let correctPosition = DHTextPosition(line: 10, column: 17)
+        let correctPosition = DHTextPosition(line: 10, column: 19)
         XCTAssertEqual(classStartPosition, correctPosition, "Wrong position: \(String(describing: classStartPosition))")
     }
     
@@ -78,5 +78,17 @@ class ArrayOfStringTests: XCTestCase {
         let classEndPosition = lines.positionOfBlockEnd(from: startPosition, startBlockMarker: "{", endBlockMarker: "}")
         let correctPosition = DHTextPosition(line: 42, column: 0)
         XCTAssertEqual(classEndPosition, correctPosition, "Wrong position: \(String(describing: classEndPosition))")
+    }
+    
+    func testClassName() {
+        guard let source = String(testFileName:"SwiftClass.test") else {
+            XCTFail("Source test file not found")
+            return
+        }
+        let lines = source.lines()
+        let classNameLocation = lines.positionOfClass(over: 12)
+        XCTAssertNotNil(classNameLocation, "Class name not found")
+        XCTAssertTrue(classNameLocation?.lineIndex == 10, "Wrong line of class declare: \(String(describing: classNameLocation?.lineIndex))")
+        XCTAssertTrue(classNameLocation?.className == "StringHelper", "Wrong class name: \(String(describing: classNameLocation?.className))")
     }
 }

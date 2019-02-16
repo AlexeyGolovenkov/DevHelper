@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension String {
+class StringHelper {
     func countInstances(of stringToFind: String, in range: Range<String.Index>) -> Int {
         guard stringToFind.count > 0 else {
             return 0

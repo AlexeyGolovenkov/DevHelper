@@ -315,14 +315,48 @@ extension NSMutableArray {
     
     func positionOfClass(over line: Int) -> (lineIndex: Int, className: String)? {
         for index in (0 ... line).reversed() {
-            
+            guard index < self.count else {
+                continue
+            }
+            guard let line = self[index] as? String else {
+                continue
+            }
+            guard let className = line.className() else {
+                continue
+            }
+            return (lineIndex: index, className: className)
         }
         
         return nil
     }
     
     func addSwiftExtension(for position: DHTextPosition) -> DHTextRange {
+        let errorRange = DHTextRange(start: position, end: position)
+        guard let classInfo = positionOfClass(over: position.line) else {
+            return errorRange
+        }
+        let nextLineIndex = classInfo.lineIndex + 1
+        guard nextLineIndex < self.count else {
+            return errorRange
+        }
+        let nextLinePosition = DHTextPosition(line: nextLineIndex, column: 2)
+        guard let classEndPosition = self.positionOfBlockEnd(from: nextLinePosition, startBlockMarker: "{", endBlockMarker: "}") else {
+            return errorRange
+        }
         
-        return DHTextRange(start: position, end: position)
+        let extensionBegin = "extension \(classInfo.className): "
+        let protocolName = "<#Protocol#>"
+        var insertPosition = classEndPosition.line + 1
+        self.insert("", at: insertPosition)
+        insertPosition += 1
+        self.insert("\(extensionBegin)\(protocolName) {", at: insertPosition)
+        insertPosition += 1
+        self.insert("    ", at: insertPosition)
+        insertPosition += 1
+        self.insert("}", at: insertPosition)
+        
+        let selectionStart = DHTextPosition(line: insertPosition - 2, column: extensionBegin.count)
+        let selectionEnd = DHTextPosition(line: insertPosition - 2, column: extensionBegin.count + protocolName.count)
+        return DHTextRange(start: selectionStart, end: selectionEnd)
     }
 }
