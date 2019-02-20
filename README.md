@@ -45,7 +45,7 @@ Copies a previous line to current cursor position. Coping is started from the co
 ### Comment out
 Adds /\* before and \*/ after selected text. Selection is extended by inserted symbols. If selection is empty, just adds symbols at cursor position and move the cursor between.
 
-###Uncomment
+### Uncomment
 Reverse operation. Removes /* */ comment markers around commented code. Just put cursor in commented block and press Editor -> DevHelper -> Uncomment (or corresponding hot key). Supports multiline- and nested comments.
 
 ### Swift Extension
