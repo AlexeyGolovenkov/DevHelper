@@ -20,7 +20,7 @@
 		275EB3DB1E73F68700CCAF22 /* NSMutableArray+DevHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EB3D91E73F68700CCAF22 /* NSMutableArray+DevHelper.swift */; };
 		275EB3DD1E73F83700CCAF22 /* DHTextRange+XCodeExtensionOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EB3DC1E73F83700CCAF22 /* DHTextRange+XCodeExtensionOnly.swift */; };
 		275EB3DE1E73FE4900CCAF22 /* SortCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278A796B1E7340AD008179F9 /* SortCommandTests.swift */; };
-		275EB3DF1E73FFC800CCAF22 /* DevHelper.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 278A797A1E7340E9008179F9 /* DevHelper.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		275EB3DF1E73FFC800CCAF22 /* DevHelperCore.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 278A797A1E7340E9008179F9 /* DevHelperCore.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		275EB3E61E74008600CCAF22 /* SingleSortCorrected.test in Resources */ = {isa = PBXBuildFile; fileRef = 275EB3E41E74008600CCAF22 /* SingleSortCorrected.test */; };
 		275EB3E71E74008600CCAF22 /* SingleSortSource.test in Resources */ = {isa = PBXBuildFile; fileRef = 275EB3E51E74008600CCAF22 /* SingleSortSource.test */; };
 		278A795A1E7340AD008179F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278A79591E7340AD008179F9 /* AppDelegate.swift */; };
@@ -73,7 +73,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				275EB3DF1E73FFC800CCAF22 /* DevHelper.appex in Embed App Extensions */,
+				275EB3DF1E73FFC800CCAF22 /* DevHelperCore.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,7 +94,7 @@
 		275EB3DC1E73F83700CCAF22 /* DHTextRange+XCodeExtensionOnly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DHTextRange+XCodeExtensionOnly.swift"; sourceTree = "<group>"; };
 		275EB3E41E74008600CCAF22 /* SingleSortCorrected.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SingleSortCorrected.test; sourceTree = "<group>"; };
 		275EB3E51E74008600CCAF22 /* SingleSortSource.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SingleSortSource.test; sourceTree = "<group>"; };
-		278A79561E7340AD008179F9 /* DevHelperContainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevHelperContainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		278A79561E7340AD008179F9 /* DevHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		278A79591E7340AD008179F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		278A795B1E7340AD008179F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		278A795D1E7340AD008179F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		278A79671E7340AD008179F9 /* DevHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		278A796B1E7340AD008179F9 /* SortCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCommandTests.swift; sourceTree = "<group>"; };
 		278A796D1E7340AD008179F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		278A797A1E7340E9008179F9 /* DevHelper.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DevHelper.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		278A797A1E7340E9008179F9 /* DevHelperCore.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DevHelperCore.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		278A797C1E7340E9008179F9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		278A79801E7340E9008179F9 /* Ext.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ext.entitlements; sourceTree = "<group>"; };
 		278A79811E7340E9008179F9 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
@@ -200,9 +200,9 @@
 		278A79571E7340AD008179F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				278A79561E7340AD008179F9 /* DevHelperContainer.app */,
+				278A79561E7340AD008179F9 /* DevHelper.app */,
 				278A79671E7340AD008179F9 /* DevHelperTests.xctest */,
-				278A797A1E7340E9008179F9 /* DevHelper.appex */,
+				278A797A1E7340E9008179F9 /* DevHelperCore.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,9 +272,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		278A79551E7340AD008179F9 /* DevHelperContainer */ = {
+		278A79551E7340AD008179F9 /* DevHelper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 278A79701E7340AD008179F9 /* Build configuration list for PBXNativeTarget "DevHelperContainer" */;
+			buildConfigurationList = 278A79701E7340AD008179F9 /* Build configuration list for PBXNativeTarget "DevHelper" */;
 			buildPhases = (
 				278A79521E7340AD008179F9 /* Sources */,
 				278A79531E7340AD008179F9 /* Frameworks */,
@@ -286,9 +286,9 @@
 			dependencies = (
 				275EB3E11E73FFC800CCAF22 /* PBXTargetDependency */,
 			);
-			name = DevHelperContainer;
+			name = DevHelper;
 			productName = DevHelper;
-			productReference = 278A79561E7340AD008179F9 /* DevHelperContainer.app */;
+			productReference = 278A79561E7340AD008179F9 /* DevHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
 		278A79661E7340AD008179F9 /* DevHelperTests */ = {
@@ -309,9 +309,9 @@
 			productReference = 278A79671E7340AD008179F9 /* DevHelperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		278A79791E7340E9008179F9 /* DevHelper */ = {
+		278A79791E7340E9008179F9 /* DevHelperCore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 278A79891E7340E9008179F9 /* Build configuration list for PBXNativeTarget "DevHelper" */;
+			buildConfigurationList = 278A79891E7340E9008179F9 /* Build configuration list for PBXNativeTarget "DevHelperCore" */;
 			buildPhases = (
 				278A79761E7340E9008179F9 /* Sources */,
 				278A79771E7340E9008179F9 /* Frameworks */,
@@ -321,9 +321,9 @@
 			);
 			dependencies = (
 			);
-			name = DevHelper;
+			name = DevHelperCore;
 			productName = Ext;
-			productReference = 278A797A1E7340E9008179F9 /* DevHelper.appex */;
+			productReference = 278A797A1E7340E9008179F9 /* DevHelperCore.appex */;
 			productType = "com.apple.product-type.xcode-extension";
 		};
 /* End PBXNativeTarget section */
@@ -375,9 +375,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				278A79551E7340AD008179F9 /* DevHelperContainer */,
+				278A79551E7340AD008179F9 /* DevHelper */,
 				278A79661E7340AD008179F9 /* DevHelperTests */,
-				278A79791E7340E9008179F9 /* DevHelper */,
+				278A79791E7340E9008179F9 /* DevHelperCore */,
 			);
 		};
 /* End PBXProject section */
@@ -471,12 +471,12 @@
 /* Begin PBXTargetDependency section */
 		275EB3E11E73FFC800CCAF22 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 278A79791E7340E9008179F9 /* DevHelper */;
+			target = 278A79791E7340E9008179F9 /* DevHelperCore */;
 			targetProxy = 275EB3E01E73FFC800CCAF22 /* PBXContainerItemProxy */;
 		};
 		278A79691E7340AD008179F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 278A79551E7340AD008179F9 /* DevHelperContainer */;
+			target = 278A79551E7340AD008179F9 /* DevHelper */;
 			targetProxy = 278A79681E7340AD008179F9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -650,7 +650,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevHelperContainer.app/Contents/MacOS/DevHelperContainer";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevHelper.temp_caseinsensitive_renameContainer.app/Contents/MacOS/DevHelper.temp_caseinsensitive_renameContainer";
 			};
 			name = Debug;
 		};
@@ -670,7 +670,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevHelperContainer.app/Contents/MacOS/DevHelperContainer";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevHelper.temp_caseinsensitive_renameContainer.app/Contents/MacOS/DevHelper.temp_caseinsensitive_renameContainer";
 			};
 			name = Release;
 		};
@@ -720,7 +720,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		278A79701E7340AD008179F9 /* Build configuration list for PBXNativeTarget "DevHelperContainer" */ = {
+		278A79701E7340AD008179F9 /* Build configuration list for PBXNativeTarget "DevHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				278A79711E7340AD008179F9 /* Debug */,
@@ -738,7 +738,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		278A79891E7340E9008179F9 /* Build configuration list for PBXNativeTarget "DevHelper" */ = {
+		278A79891E7340E9008179F9 /* Build configuration list for PBXNativeTarget "DevHelperCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				278A798A1E7340E9008179F9 /* Debug */,

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "278A79551E7340AD008179F9"
-               BuildableName = "DevHelperContainer.app"
-               BlueprintName = "DevHelperContainer"
+               BuildableName = "DevHelper.app"
+               BlueprintName = "DevHelper"
                ReferencedContainer = "container:DevHelper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,8 +44,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "278A79551E7340AD008179F9"
-            BuildableName = "DevHelperContainer.app"
-            BlueprintName = "DevHelperContainer"
+            BuildableName = "DevHelper.app"
+            BlueprintName = "DevHelper"
             ReferencedContainer = "container:DevHelper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,8 +67,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "278A79551E7340AD008179F9"
-            BuildableName = "DevHelperContainer.app"
-            BlueprintName = "DevHelperContainer"
+            BuildableName = "DevHelper.app"
+            BlueprintName = "DevHelper"
             ReferencedContainer = "container:DevHelper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -86,8 +86,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "278A79551E7340AD008179F9"
-            BuildableName = "DevHelperContainer.app"
-            BlueprintName = "DevHelperContainer"
+            BuildableName = "DevHelper.app"
+            BlueprintName = "DevHelper"
             ReferencedContainer = "container:DevHelper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
