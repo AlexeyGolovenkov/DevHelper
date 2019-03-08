@@ -37,6 +37,10 @@ class StringTests: XCTestCase {
         let nonameString = codeString.className()
         XCTAssertNil(nonameString, "Noname string must be nil. Real result: \(String(describing: nonameString))")
         
+        let staticFuncString = "class func funcName(_ parameter: String)"
+        let notFoundString = staticFuncString.className()
+        XCTAssertNil(notFoundString, "Noname string must be nil. Real result: \(String(describing: notFoundString))")
+        
         let classString = "class SourceEditorExtension: NSObject, XCSourceEditorExtension {"
         let className = classString.className()
         XCTAssertTrue(className == "SourceEditorExtension", "Wrong class name: \(String(describing: className))")

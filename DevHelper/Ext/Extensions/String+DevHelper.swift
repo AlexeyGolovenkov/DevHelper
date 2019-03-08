@@ -22,12 +22,12 @@ extension String {
     }
     
     func className() -> String? {
-        let pattern = "(class|struct|enum) +(([A-Z]|_|[0-9])+)"
+        let pattern = "(class|struct|enum) +(?!func\\b)(([A-Z]|_|[0-9])+)"
         guard let regexp = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive) else {
             return nil
         }
         
-        let string = self as NSString
+        let string = NSString(string: self)
         let foundStrings = regexp.matches(in: string as String, options: [], range: NSRange(location: 0, length: string.length))
         guard foundStrings.count > 0 else {
             return nil

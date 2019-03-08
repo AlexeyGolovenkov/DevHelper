@@ -40,4 +40,8 @@ class StringHelper {
         let name = string.substring(with: range)
         return name
     }
+
+    class func staticMethod() -> String {
+        return "staticMethod"
+    }
 }
