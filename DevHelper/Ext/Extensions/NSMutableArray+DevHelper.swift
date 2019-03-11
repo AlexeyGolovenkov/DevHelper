@@ -102,19 +102,14 @@ extension NSMutableArray {
 		guard var firstLine = self[range.start.line] as? String else {
 			return range
 		}
-		let firstLineIndex = firstLine.index(firstLine.startIndex, offsetBy: range.start.column)
-		firstLine.insert("*", at: firstLineIndex)
-		firstLine.insert("/", at: firstLineIndex)
+        let firstLineIndex = firstLine.index(firstLine.startIndex, offsetBy: range.start.column)
+        firstLine.insert("*", at: firstLineIndex)
+        firstLine.insert("/", at: firstLineIndex)
 		self[range.start.line] = firstLine
-		
-		if range.isCursorPosition() {
-			range.end.column += 2
-			range.start.column += 2
-			return range
-		}
-		
-		let offset = range.start.line == range.end.line ? 4 : 2
-		range.end.column += offset
+        range.start.column += 2
+        if range.start.line == range.end.line {
+            range.end.column += 2
+        }
 		return range
 	}
 	
