@@ -50,3 +50,6 @@ Reverse operation. Removes /* */ comment markers around commented code. Just put
 
 ### Swift Extension
 Generates extension for the class you are editing. The extension will be placed right after the class and selection will be moved to it. 
+
+### Remove extra spaces
+Removes spaces at the end of every line in current file
