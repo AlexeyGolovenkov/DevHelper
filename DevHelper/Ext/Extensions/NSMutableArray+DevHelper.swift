@@ -356,4 +356,16 @@ extension NSMutableArray {
         let selectionEnd = DHTextPosition(line: insertPosition - 2, column: extensionBegin.count + protocolName.count)
         return DHTextRange(start: selectionStart, end: selectionEnd)
     }
+    
+    func removeSpaces() {
+        let regex = try! NSRegularExpression(pattern: " +$")
+        for lineIndex in 0 ..< count {
+            guard let sourceLine = (self[lineIndex]) as? String else {
+                continue
+            }
+            let range = NSMakeRange(0, sourceLine.count)
+            let fixedLine = regex.stringByReplacingMatches(in: sourceLine, options: [], range: range, withTemplate: "")
+            self[lineIndex] = fixedLine
+        }
+    }
 }

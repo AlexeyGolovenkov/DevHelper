@@ -20,7 +20,7 @@
 		275EB3DB1E73F68700CCAF22 /* NSMutableArray+DevHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EB3D91E73F68700CCAF22 /* NSMutableArray+DevHelper.swift */; };
 		275EB3DD1E73F83700CCAF22 /* DHTextRange+XCodeExtensionOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EB3DC1E73F83700CCAF22 /* DHTextRange+XCodeExtensionOnly.swift */; };
 		275EB3DE1E73FE4900CCAF22 /* SortCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278A796B1E7340AD008179F9 /* SortCommandTests.swift */; };
-		275EB3DF1E73FFC800CCAF22 /* DevHelperCore.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 278A797A1E7340E9008179F9 /* DevHelperCore.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		275EB3DF1E73FFC800CCAF22 /* DevHelperCore.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 278A797A1E7340E9008179F9 /* DevHelperCore.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		275EB3E61E74008600CCAF22 /* SingleSortCorrected.test in Resources */ = {isa = PBXBuildFile; fileRef = 275EB3E41E74008600CCAF22 /* SingleSortCorrected.test */; };
 		275EB3E71E74008600CCAF22 /* SingleSortSource.test in Resources */ = {isa = PBXBuildFile; fileRef = 275EB3E51E74008600CCAF22 /* SingleSortSource.test */; };
 		278A795A1E7340AD008179F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278A79591E7340AD008179F9 /* AppDelegate.swift */; };
@@ -47,6 +47,12 @@
 		27F9790D1FAF069900348F7D /* String+DevHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F9790C1FAF069900348F7D /* String+DevHelper.swift */; };
 		27F9790E1FAF070700348F7D /* String+DevHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F9790C1FAF069900348F7D /* String+DevHelper.swift */; };
 		27F979101FAF0A1E00348F7D /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F9790F1FAF0A1E00348F7D /* StringTests.swift */; };
+		5A2CEAA929D1B7C8003C413A /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275EB3CF1E73F24000CCAF22 /* XcodeKit.framework */; };
+		5A2CEAAA29D1B7C8003C413A /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 275EB3CF1E73F24000CCAF22 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AD058C929D1A733004F34A5 /* RemoveSpacesCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD058C829D1A733004F34A5 /* RemoveSpacesCommand.swift */; };
+		5AD058CC29D1AAB0004F34A5 /* ClassWithoutSpaces.test in Resources */ = {isa = PBXBuildFile; fileRef = 5AD058CA29D1AAB0004F34A5 /* ClassWithoutSpaces.test */; };
+		5AD058CD29D1AAB0004F34A5 /* ClassWithSpaces.test in Resources */ = {isa = PBXBuildFile; fileRef = 5AD058CB29D1AAB0004F34A5 /* ClassWithSpaces.test */; };
+		5AD058CF29D1AAD6004F34A5 /* RemoveSpacesCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD058CE29D1AAD6004F34A5 /* RemoveSpacesCommandTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,15 +73,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		275EB3E21E73FFC800CCAF22 /* Embed App Extensions */ = {
+		275EB3E21E73FFC800CCAF22 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				275EB3DF1E73FFC800CCAF22 /* DevHelperCore.appex in Embed App Extensions */,
+				275EB3DF1E73FFC800CCAF22 /* DevHelperCore.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2CEAAB29D1B7C8003C413A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5A2CEAAA29D1B7C8003C413A /* XcodeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -126,6 +143,10 @@
 		27F979091FAEFBB200348F7D /* UncommentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncommentTests.swift; sourceTree = "<group>"; };
 		27F9790C1FAF069900348F7D /* String+DevHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DevHelper.swift"; sourceTree = "<group>"; };
 		27F9790F1FAF0A1E00348F7D /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		5AD058C829D1A733004F34A5 /* RemoveSpacesCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveSpacesCommand.swift; sourceTree = "<group>"; };
+		5AD058CA29D1AAB0004F34A5 /* ClassWithoutSpaces.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClassWithoutSpaces.test; sourceTree = "<group>"; };
+		5AD058CB29D1AAB0004F34A5 /* ClassWithSpaces.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClassWithSpaces.test; sourceTree = "<group>"; };
+		5AD058CE29D1AAD6004F34A5 /* RemoveSpacesCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveSpacesCommandTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				278A797D1E7340E9008179F9 /* Cocoa.framework in Frameworks */,
+				5A2CEAA929D1B7C8003C413A /* XcodeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +179,8 @@
 		275EB3C51E73E82D00CCAF22 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
+				5AD058CA29D1AAB0004F34A5 /* ClassWithoutSpaces.test */,
+				5AD058CB29D1AAB0004F34A5 /* ClassWithSpaces.test */,
 				27B310C22218BD5B001AB3AF /* SwiftClass.test */,
 				27F978FC1FAEF33900348F7D /* UncommentInline1.test */,
 				27F979001FAEF33900348F7D /* UncommentInline2.test */,
@@ -230,6 +254,7 @@
 				27B99605206112A300EA7F75 /* ArrayOfStringTests.swift */,
 				27F9790F1FAF0A1E00348F7D /* StringTests.swift */,
 				275EB3CB1E73E9DC00CCAF22 /* String+Test.swift */,
+				5AD058CE29D1AAD6004F34A5 /* RemoveSpacesCommandTests.swift */,
 				278A796D1E7340AD008179F9 /* Info.plist */,
 			);
 			path = DevHelperTests;
@@ -255,6 +280,7 @@
 				274CBA3F1E758B5400D20B52 /* CopyWordAboveCommand.swift */,
 				27F978F81FAE025B00348F7D /* UncommentCommand.swift */,
 				27A06C14220982DC007AAF5B /* SwtExtensionCommand.swift */,
+				5AD058C829D1A733004F34A5 /* RemoveSpacesCommand.swift */,
 				278A79851E7340E9008179F9 /* Info.plist */,
 				278A797F1E7340E9008179F9 /* Supporting Files */,
 			);
@@ -279,7 +305,7 @@
 				278A79521E7340AD008179F9 /* Sources */,
 				278A79531E7340AD008179F9 /* Frameworks */,
 				278A79541E7340AD008179F9 /* Resources */,
-				275EB3E21E73FFC800CCAF22 /* Embed App Extensions */,
+				275EB3E21E73FFC800CCAF22 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -316,6 +342,7 @@
 				278A79761E7340E9008179F9 /* Sources */,
 				278A79771E7340E9008179F9 /* Frameworks */,
 				278A79781E7340E9008179F9 /* Resources */,
+				5A2CEAAB29D1B7C8003C413A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -333,7 +360,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = "Alexey Golovenkov";
 				TargetAttributes = {
 					278A79551E7340AD008179F9 = {
@@ -367,6 +394,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -408,6 +436,8 @@
 				278DEEE71F9C84D200AE030F /* CopyLine.test in Resources */,
 				27F979021FAEF33900348F7D /* UncommentNestedOutside.test in Resources */,
 				27F979081FAEF33900348F7D /* UncommentMultilineOutside.test in Resources */,
+				5AD058CD29D1AAB0004F34A5 /* ClassWithSpaces.test in Resources */,
+				5AD058CC29D1AAB0004F34A5 /* ClassWithoutSpaces.test in Resources */,
 				27F979051FAEF33900348F7D /* UncommentSource.test in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +473,7 @@
 				274CBA3B1E7584CD00D20B52 /* DHTextRangeTests.swift in Sources */,
 				27F9790A1FAEFBB200348F7D /* UncommentTests.swift in Sources */,
 				27B99606206112A300EA7F75 /* ArrayOfStringTests.swift in Sources */,
+				5AD058CF29D1AAD6004F34A5 /* RemoveSpacesCommandTests.swift in Sources */,
 				27F979101FAF0A1E00348F7D /* StringTests.swift in Sources */,
 				275EB3DE1E73FE4900CCAF22 /* SortCommandTests.swift in Sources */,
 			);
@@ -452,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AD058C929D1A733004F34A5 /* RemoveSpacesCommand.swift in Sources */,
 				274CBA411E758B5400D20B52 /* CopyWordAboveCommand.swift in Sources */,
 				275EB3DD1E73F83700CCAF22 /* DHTextRange+XCodeExtensionOnly.swift in Sources */,
 				270204DB1F9C7E840002A955 /* CopyLineCommand.swift in Sources */,
@@ -497,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -517,6 +550,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -524,6 +558,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -554,6 +589,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -574,6 +610,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -581,6 +618,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -605,14 +643,19 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DevHelperContainer.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VKPEBSVB5E;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = DevHelper/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DevHelper;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.agsoft.DevHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -622,14 +665,19 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DevHelperContainer.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VKPEBSVB5E;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = DevHelper/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DevHelper;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.agsoft.DevHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -639,12 +687,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VKPEBSVB5E;
 				INFOPLIST_FILE = DevHelperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.agsoft.DevHelperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -660,12 +710,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VKPEBSVB5E;
 				INFOPLIST_FILE = DevHelperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.agsoft.DevHelperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -678,16 +730,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Ext/Ext.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VKPEBSVB5E;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Ext/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.agsoft.DevHelper.Ext;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -695,16 +750,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Ext/Ext.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VKPEBSVB5E;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Ext/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.agsoft.DevHelper.Ext;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
